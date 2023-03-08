@@ -4,6 +4,10 @@ function CreatePost() {
   return (
     <div className = "createPostPage">
         <div className = "cpContainer">
+            <body>
+
+
+
             <h1>Create A Post</h1>
             <div className = "inputGp">
                 <label> Title: </label>
@@ -13,7 +17,15 @@ function CreatePost() {
                 <label> Post: </label>
                 <textarea placeholder = "Post.."/>
             </div>
-            <button>Submit Post</button>
+
+            <div class="banner">
+                  <input type = "file" accept="image/*" id="banner-upload" hidden></input>
+                  <label for="banner-upload" class="banner-upload-btn"><button>Submit Post</button></label>
+            </div>
+
+
+            </body>
+
         </div>
     </div>
   )

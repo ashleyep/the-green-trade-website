@@ -1,6 +1,4 @@
 import React from 'react';
-import post1 from './assets/post1.JPG';
-import post2 from './assets/post2.jpg';
 
 function Home() {
   //   const [ user, setUser ] = useState({}); //might need to change the useState to more complex
