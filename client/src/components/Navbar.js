@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/placeholder_logo.png';
+import LogoActual from '../assets/logo.png';
 import {Link} from 'react-router-dom';
 import '../styles/Navbar.css'
 // import { isAuth } from './/App.js';
@@ -26,7 +26,7 @@ function Navbar() {
             <Link to='/about' className='navButton'> ABOUT </Link>
       </div>
       <div className = "middle">
-          <img className='logoImg' src = {Logo}/>
+          <img className='logoImg' src = {LogoActual}/>
       </div>
       <div className = "rightSide">
             <Link to='/post' className='navButton'> POST </Link>
