@@ -106,8 +106,9 @@ function CreatePost({ isAuth }) {
     const uploadTask = uploadBytes(imageRef, imageUpload);
     getDownloadURL(imageRef).then((url) => {
       setUrl(url);
-      console.log(url);
+      // console.log(url);
     })
+    console.log(url);
     await addDoc(postsCollectionRef, {
       title,
       postText,
