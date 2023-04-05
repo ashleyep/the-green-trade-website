@@ -5,9 +5,62 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #E7F0E4;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@media screen and (min-width: 1120px) {
+h1 {
+  position: absolute;
+  display: block;
+  margin:auto;
+  margin-right: 20%;
+  margin-left: 20%; 
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  letter-spacing: 0.12em;
+}
+
+.home-grid {
+  margin-top: 5%;
+  display: grid;
+  grid-template-rows: 150px 400px;
+  justify-content: center;
+  align-content: center;
+}
+
+.home-grid img {
+  display: block;
+  max-width: 50%;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.about-blurb {
+  margin-right: 5%;
+}
+
+.about-blurb h1 {
+  display: block;
+  margin-left: 10%;
+}
+
+.about-blurb h2 {
+  font-style: bold;
+  display: block;
+  position: relative;
+  top: 100px;
+  font-weight: 10px;
+  margin-left: 10%;
+  line-height: 1.5em;
+  text-align: left;
+}
+.our-services {
+  background-color: bisque;
+}
 }

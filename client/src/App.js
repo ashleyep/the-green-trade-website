@@ -2,7 +2,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Logo from './assets/placeholder_logo.png';
+import Logo from './assets/logo.png';
+import Title from './assets/title.png';
 import Display from './pages/Display';
 
 import CreatePost from './pages/CreatePost';
@@ -26,28 +27,31 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Green Trade</h1>
-      {/* <p> We will eventually have a cooler name</p> */}
+      
       <Router>
-        {/* <Navbar/> */}
         <nav>
         <div className = "navbar">
-        <div className="leftSide">
-            <img src = {Logo}/>
-        </div>
-        {/* <div className="rightSide"> */}
+          <div className="left">
             <Link to='/'> Home </Link>
-            <Link to= '/display'> Display </Link>
             {!isAuth ? (
-              <Link to="/login"> Login </Link>
-            ) : (
-              <>
-               <Link to='/createPost'> Create Post </Link>
-              <button onClick ={signUserOut}> Logout </button>
-              </>
-            )}
-        {/* </div> */}
-    </div>
+                <Link to="/login"> Login </Link>
+              ) : (
+                <>
+                <Link to='/createPost'> Create Post </Link>
+                <button onClick ={signUserOut}> Logout </button>
+                </>
+              )}
+
+          </div>
+          <div className="middle">
+              <img id="logo" class="button" src = {Logo}/>
+              <img id="title" class="button" src = {Title}/>
+          </div>
+          <div className="right">
+            <Link to= '/display' class="button" > Display </Link>
+            <Link to= '' class="button" > Contact </Link>
+          </div>   
+        </div>
         </nav>
         <Routes>
           <Route path = '/'  element={<Home/>}/>
