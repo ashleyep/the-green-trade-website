@@ -42,8 +42,7 @@ function Home() {
   <h1 class='about'>Promoting sustainable fashion by facilitating the exchange of clothes through our online trading platform.</h1>
   <img class='about-img' src={HandEarth}></img> 
   </div>
-
-    
+ 
   )
 }
 
