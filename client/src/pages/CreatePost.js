@@ -11,7 +11,7 @@ function CreatePost(isAuth) {
   const [contactInfo, setContact] = useState("");
   const [imageUpload, setImageUpload] = useState("");
   const [url, setUrl] = useState("");
-  const postCollectionRef = collection(db, "posts");
+  const postsCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
   // const uploadImage = () => {  
    
@@ -25,20 +25,20 @@ function CreatePost(isAuth) {
   const createPost = async () => {
     if (imageUpload == null) return;
     const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    // const uploadTask = uploadBytes(imageRef, imageUpload).then(() => {
-      const uploadTask = uploadBytes(imageRef, imageUpload);
-      getDownloadURL(uploadTask).then((downloadURL) => {
-        setUrl(downloadURL);
-      })
-
-    await addDoc(postCollectionRef, {
-      title, 
-      postText, 
-      author: {name: auth.currentUser.displayName, id: auth.currentUser.uid},
-      url,
-      contactInfo,
+    const uploadTask = uploadBytes(imageRef, imageUpload);
+    getDownloadURL(imageRef).then((url) => {
+      setUrl(url);
+      console.log(url);
+      addDoc(postsCollectionRef, {
+        title,
+        postText,
+        contactInfo,
+        url,
+        author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+      }).then(() => {
+        navigate("/Display");
+      });
     });
-    navigate("/display");
   };
   
   //redirects you to login if it doesn work
