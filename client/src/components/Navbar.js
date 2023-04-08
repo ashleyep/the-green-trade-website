@@ -24,6 +24,7 @@ function Navbar() {
       <div className = "leftSide" >
             <Link to='/' className='navButton'> HOME </Link>
             <Link to='/about' className='navButton'> ABOUT </Link>
+            <Link to='/contact' className='navButton'> CONTACT </Link>
       </div>
       <div className = "middle">
           <img className='logoImg' src = {LogoActual}/>
