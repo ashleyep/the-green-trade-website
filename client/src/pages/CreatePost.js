@@ -4,6 +4,7 @@ import { db, auth, storage } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage';
 import {v4} from 'uuid'
+import '../styles/CreatePost.css';
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -52,43 +53,56 @@ function CreatePost({ isAuth }) {
   }, []);
 
   return (
-    <div className="createPostPage">
+    <div className="createPostPage">  
+      <h1 id="createPostTitle">Create A Post</h1>
       <div className="cpContainer">
-        <h1>Create A Post</h1>
-        <div className="inputGp">
-          <label> Title:</label>
+        <div className="inputGp" id="postTitle">
+          <label class="inputDetails"> Title </label>
+          <div class="inputDetails">
           <input
-            placeholder="Title..."
+            placeholder="title..."
             onChange={(event) => {
               setTitle(event.target.value);
             }}
           />
+          </div>
         </div>
-        <div className="inputGp">
-          <label> Post:</label>
-          <textarea
-            placeholder="Post..."
+
+        <div className="inputGp" id="post">
+          <label class="inputDetails"> Post </label>
+          <div class="inputDetails">
+            <textarea
+            placeholder="description of your item..."
             onChange={(event) => {
               setPostText(event.target.value);
             }}
-          />
+            />
+          </div>
         </div>
+
         <div className="inputGp">
-          <label> Contact Info:</label>
-          <textarea
-            placeholder="Contact Info..."
-            onChange={(event) => {
-              setContact(event.target.value);
-            }}
-          />
-        </div>
+          <label className="inputGp" > Contact Info </label>
+          <div class="inputDetails">
+            <textarea
+              placeholder="email/socials"
+              onChange={(event) => {
+                setContact(event.target.value);
+              }}
+            />
+          </div>
+      </div>
+
       <div className = "inputGp">
-      <label> Image: </label>
-      <input type ="file" onChange={(event) => {setImageUpload(event.target.files[0])}}/>
-      {/* <button onClick={uploadImage}>Upload Image</button> */}
-      </div>
-        <button onClick={createPost}> Submit Post</button>
-      </div>
+        <label class="inputDetails" > Image </label>
+        <div class="inputFileDetails">
+          <input type ="file" onChange={(event) => {setImageUpload(event.target.files[0])}}/>
+        </div>
+
+        </div>
+        <div class="inputDetails">
+          <button onClick={createPost}> Submit Post</button>
+        </div>
+        </div>
     </div>
   );
 }
