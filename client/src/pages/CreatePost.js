@@ -14,28 +14,7 @@ function CreatePost({ isAuth }) {
 
   const postsCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
-
-  // const createPost = async () => {
-  //   if (!imageUpload) {
-  //     alert("image upload invalid");
-  //     return;
-  //   }
-  //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-  //   const uploadTask = uploadBytes(imageRef, imageUpload);
-  //   getDownloadURL(imageRef).then((url) => {
-  //     setUrl(url);
-  //     console.log(url);
-  //     addDoc(postsCollectionRef, {
-  //       title,
-  //       postText,
-  //       contactInfo,
-  //       url,
-  //       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
-  //     }).then(() => {
-  //       navigate("/Display");
-  //     });
-  //   });
-  // };
+  
   const createPost = async () => {
     try {
       if (!imageUpload) {

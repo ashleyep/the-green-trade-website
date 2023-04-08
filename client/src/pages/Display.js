@@ -42,12 +42,12 @@ function Display(isAuth) {
                 </div>
                 {" "}
                 </div>
-                <div className='postTextContainer'>{post.postText}</div>
+                <div className='postTextContainer'>Description: {post.postText}</div>
                 <div>
                 <img src={post.url} alt="" className="post-image" />
                 </div>
-                <h3>{post.contactInfo}</h3>
-                <h3>@{post.author.name}</h3>
+                <h3>Contact Info: {post.contactInfo}</h3>
+                <h3>User: {post.author.name}</h3>
             </div>
         );
     })}
