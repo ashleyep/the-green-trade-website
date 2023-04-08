@@ -43,9 +43,9 @@ function Display(isAuth) {
                 {" "}
                 </div>
                 <div className='postTextContainer'>{post.postText}</div>
-                {/* <div>
+                <div>
                     <img src = {post.url} alt=""/>
-                </div> */}
+                </div>
                 <h3>{post.contactInfo}</h3>
                 <h3>@{post.author.name}</h3>
             </div>
