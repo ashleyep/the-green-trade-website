@@ -3,21 +3,31 @@
   text-align: center;
 }
 .loginPage {
+    display: grid;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
     width: 30%;
-    border: 3px solid green;
-    background-color: solid green;
+    background-color: #587D6B;
     padding: 70px;
     border-radius: 15px;
-
+    color: white;
   }
 
 .login-with-google-btn {
     border-radius: 15px;
     width: 30%;
     height: 100%;
-    background-color: lightyellow;
+    background-color: #E7F0E4;
+    color: #587D6B;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    justify-content: center;
+    margin-left: 35%;
+}
+
+.login-with-google-btn:hover {
+  color: #587D6B;
+  background-color: white;
 }
 
