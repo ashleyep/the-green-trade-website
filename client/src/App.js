@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Logo from './assets/logo.png';
+import HandEarth from './assets/hand-earth.png';
 import Title from './assets/title.png';
 import Display from './pages/Display';
 import Contact from './pages/Contact';
@@ -33,9 +34,9 @@ function App() {
         <nav>
         <div className = "navbar">
           <div className="left">
-            <Link to='/'> Home </Link>
+            <Link to='/' class="button"> Home </Link>
             {!isAuth ? (
-                <Link to="/login"> Login </Link>
+                <Link to="/login" class="button"> Login </Link>
               ) : (
                 <>
                 <Link to='/createPost'> Create Post </Link>
@@ -54,6 +55,10 @@ function App() {
           </div>   
         </div>
         </nav>
+        <div className='body'>
+          <h1 class='about'>Promoting sustainable fashion by facilitating the exchange of clothes through our online trading platform.</h1>
+          <img class='about-img' src={HandEarth}></img>
+        </div>
         <Routes>
           <Route path = '/'  element={<Home/>}/>
           <Route path = '/login'  element={<Login setIsAuth = {setIsAuth}/>}/>

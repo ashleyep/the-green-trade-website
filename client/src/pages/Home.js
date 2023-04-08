@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Home.css';
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
