@@ -1,8 +1,9 @@
 .about {
     display: grid;
-    margin-top: 10%;
+    margin-top: 20px;
 }
 
 .about-img {
-    margin-top: 10%
+    margin-top: 150px;
+    width: 10%
 }
