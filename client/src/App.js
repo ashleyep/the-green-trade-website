@@ -33,9 +33,9 @@ function App() {
         <nav>
         <div className = "navbar">
           <div className="left">
-            <Link to='/'> Home </Link>
+            <Link to='/' class="button"> Home </Link>
             {!isAuth ? (
-                <Link to="/login"> Login </Link>
+                <Link to="/login" class="button"> Login </Link>
               ) : (
                 <>
                 <Link to='/createPost'> Create Post </Link>

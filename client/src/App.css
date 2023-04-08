@@ -45,3 +45,9 @@
 .right {
   padding-right: 10%;
 }
+
+.button:hover {
+  background-color: #E7F0E4;
+  padding: 10px 15px;
+  border-radius: 5px;
+} 
