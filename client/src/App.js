@@ -46,8 +46,8 @@ function App() {
 
           </div>
           <div className="middle">
-              <img id="logo" class="button" src = {Logo}/>
-              <img id="title" class="button" src = {Title}/>
+              <img id="logo" src = {Logo}/>
+              <img id="title" src = {Title}/>
           </div>
           <div className="right">
             <Link to= '/display' class="button" > Display </Link>
