@@ -3,7 +3,7 @@ import {getDocs, deleteDoc, doc} from 'firebase/firestore' //returns all docs in
 import {collection} from 'firebase/firestore'
 import {db} from "../firebase-config"
 import {auth} from "../firebase-config";
-
+import  "../styles/Display.css";
 function Display(isAuth) {
     const [postList, setPostList] = useState([]);
     const postsCollectionRef = collection(db, "posts");
@@ -44,7 +44,7 @@ function Display(isAuth) {
                 </div>
                 <div className='postTextContainer'>{post.postText}</div>
                 <div>
-                    <img src = {post.url} alt=""/>
+                <img src={post.url} alt="" className="post-image" />
                 </div>
                 <h3>{post.contactInfo}</h3>
                 <h3>@{post.author.name}</h3>
