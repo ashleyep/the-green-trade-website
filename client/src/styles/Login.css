@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Lato:wght@300&family=Source+Serif+Pro&display=swap');
+.App {
+  text-align: center;
+}
+.loginPage {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    width: 30%;
+    border: 3px solid green;
+    background-color: solid green;
+    padding: 70px;
+    border-radius: 15px;
+
+  }
+
+.login-with-google-btn {
+    border-radius: 15px;
+    width: 30%;
+    height: 100%;
+    background-color: lightyellow;
+}
+
