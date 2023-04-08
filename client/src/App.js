@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Logo from './assets/logo.png';
+import HandEarth from './assets/hand-earth.png';
 import Title from './assets/title.png';
 import Display from './pages/Display';
 import Contact from './pages/Contact';
@@ -33,9 +34,9 @@ function App() {
         <nav>
         <div className = "navbar">
           <div className="left">
-            <Link to='/'> Home </Link>
+            <Link to='/' class="button"> Home </Link>
             {!isAuth ? (
-                <Link to="/login"> Login </Link>
+                <Link to="/login" class="button"> Login </Link>
               ) : (
                 <>
                 <Link to='/createPost'> Create Post </Link>

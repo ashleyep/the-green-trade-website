@@ -1,0 +1,9 @@
+.about {
+    display: grid;
+    margin-top: 20px;
+}
+
+.about-img {
+    margin-top: 150px;
+    width: 10%
+}
