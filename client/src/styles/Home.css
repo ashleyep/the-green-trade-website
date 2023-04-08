@@ -1,4 +1,5 @@
 .about {
+    display: grid;
     margin-top: 10%;
 }
 

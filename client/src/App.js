@@ -55,10 +55,6 @@ function App() {
           </div>   
         </div>
         </nav>
-        <div className='body'>
-          <h1 class='about'>Promoting sustainable fashion by facilitating the exchange of clothes through our online trading platform.</h1>
-          <img class='about-img' src={HandEarth}></img>
-        </div>
         <Routes>
           <Route path = '/'  element={<Home/>}/>
           <Route path = '/login'  element={<Login setIsAuth = {setIsAuth}/>}/>
