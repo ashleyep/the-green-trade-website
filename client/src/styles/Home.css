@@ -1,10 +1,14 @@
 .about {
     display: grid;
     margin-top: 70px;
+    background-color: #587D6B;
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
 }
 
 .about-img {
-    margin-top: 200px;
+    margin-top: 250px;
     width: 10%
 }
 .info {
