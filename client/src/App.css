@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Lato:wght@300&family=Source+Serif+Pro&display=swap');
 .App {
   text-align: center;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-weight: bold;
+}
+
+.navbar {
+  display: grid;
+  height: 200px;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.navbar .middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  flex: 50%;
+  padding-left: 50px;
+}
+
+#logo {
+  max-width: 7%;
+}
+
+#title {
+  max-width: 60%;
+}
+
+.left .right {
+  position: absolute;
+  padding-top: 10%;
+  flex: 50%;
+}
+
+.left {
+  padding-left: 10%;
+}
+.right {
+  padding-right: 10%;
 }
