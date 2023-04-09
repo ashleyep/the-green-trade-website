@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Lato:wght@300&family=Source+Serif+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,500&display=swap');
 .App {
   text-align: center;
 }
 
 * {
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 600px;
   font-weight: bold;
 }
 
@@ -46,8 +46,8 @@
   padding-right: 10%;
 }
 
-.button:hover {
-  background-color: #E7F0E4;
+.button:hover { 
+  background-color: #EFE4D4;
   padding: 10px 15px;
   border-radius: 5px;
 } 
