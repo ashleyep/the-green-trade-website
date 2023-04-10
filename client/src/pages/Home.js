@@ -3,6 +3,7 @@ import '../styles/Home.css';
 import HandEarth from '../assets/hand-earth.png';
 import celina from '../assets/celina.png';
 import ashley from '../assets/ashley.png';
+import jennifer from '../assets/jennifer.png';
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
@@ -23,23 +24,28 @@ function Home() {
   <div className = 'imageBox'>
     <div class='profileCard'>
       <h3>Ashley</h3>
-      <img class ='profile' src = {HandEarth}></img>
+      <p> Project Lead: Developer</p>
+      <img class ='profile' src = {ashley}></img>
     </div>
     <div class='profileCard'>
     <h3>Celina</h3>
-      <img class ='profile' src = {HandEarth}></img>
+    <p>Developer</p>
+      <img class ='profile' src = {celina}></img>
     </div>
     <div class='profileCard'>
     <h3>Jane</h3>
+    <p>Developer & Designer</p>
       <img class ='profile' src = {HandEarth}></img>
     </div>
     <div class='profileCard'>
     <h3>Joan</h3>
+    <>UI/UX Design</>
       <img class ='profile' src = {HandEarth}></img>
     </div>
     <div class='profileCard'>
     <h3>Jennifer</h3>
-      <img class ='profile' src = {HandEarth}></img>
+    <p>Developer</p>
+      <img class ='profile' src = {jennifer}></img>
     </div>
   
 

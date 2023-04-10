@@ -13,6 +13,7 @@
     padding: 20px;
     width: 300px;
     margin: 10px;
+    /* transform: translate(-50%, -50%); */
   }
   
   .post-img {
@@ -25,5 +26,7 @@
     margin-top: 10px;
     margin-bottom: 5px;
   }
+
+
   
   

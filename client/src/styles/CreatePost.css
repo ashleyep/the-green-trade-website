@@ -34,5 +34,8 @@
 
 button {
     max-width: 100px;
+    border-radius: 10px;
+    background-color: white;
+    border-color: white;
 
 }
