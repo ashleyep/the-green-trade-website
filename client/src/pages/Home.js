@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles/Home.css';
 import HandEarth from '../assets/hand-earth.png';
+import celina from '../assets/celina.png';
+import ashley from '../assets/ashley.png';
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
@@ -18,8 +20,8 @@ function Home() {
         By promoting a culture of conscious consumption, we hope to reduce the environmental impact of the fashion industry and create a more sustainable future for all.</p>
   </div>
   <div className = 'imageBox'>
-    <img class ='profile' src = {HandEarth}></img>
-    <img class ='profile' src = {HandEarth}></img>
+    <img class ='profile' src = {ashley}></img>
+    <img class ='profile' src = {celina}></img>
     <img class ='profile' src = {HandEarth}></img>
     <img class ='profile' src = {HandEarth}></img>
     <img class ='profile' src = {HandEarth}></img>
