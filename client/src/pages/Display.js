@@ -25,12 +25,13 @@ function Display(isAuth) {
         {postList.map((post) => {
         return(
              <div className = "post"> 
-                {" "}
-                <div className='postHeader'> 
-                {" "}
+                {/* {" "} */}
                 <div className ="title"> 
                 <h1>{post.title}</h1>
                 </div >
+                {/* <div className='postHeader'> 
+                {" "} */}
+                
                 <div className='deletePost'> 
                     {isAuth && post.author.id === auth.currentUser.uid && (
                         <button onClick = {() => {deletePost(post.id)}}> 
@@ -40,8 +41,8 @@ function Display(isAuth) {
                     )}
                     
                 </div>
-                {" "}
-                </div>
+                {/* {" "}
+                </div> */}
                 <div className='postTextContainer'>Description: {post.postText}</div>
                 <div>
                 <img src={post.url} alt="" className="post-image" />

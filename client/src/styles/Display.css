@@ -1,32 +1,50 @@
+/* Instagram post container */
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+/* Post image */
 .post-image {
-    width: 50%;
-    height: auto;
-    align-items: center;
-  }
-  .post {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    margin: 10px;
-    /* transform: translate(-50%, -50%); */
-  }
-  
-  .post-img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  
-  .post-h3 {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
 
+/* Post title */
+.post-h3 {
+  font-size: 10px;
+  text-align: center;
+}
 
-  
-  
+/* Post text */
+.post-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Post footer */
+.post-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  color: #999;
+}
+
+.post-footer span {
+  margin-right: 10px;
+}
+
+.post-footer a {
+  color: #3897f0;
+  text-decoration: none;
+}
