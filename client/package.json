@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://ashleyep.github.io/the-green-trade-website",
+  "homepage": "https://ashleyep.github.io/the-green-trade-website/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
