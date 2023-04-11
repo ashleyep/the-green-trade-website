@@ -3,6 +3,7 @@ import {auth, provider} from "../firebase-config";
 import {signInWithPopup} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom';
 import '../styles/Login.css';
+import { getAuth, signOut } from "firebase/auth";
 
 
 function Login({setIsAuth}) {
@@ -28,5 +29,11 @@ function Login({setIsAuth}) {
     </div>
   )
 }
+
+signOut(auth).then(() => {
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});
 
 export default Login
