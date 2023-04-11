@@ -12,7 +12,7 @@ root.render(
   // </React.StrictMode>
 
 // ReactDOM.render(
-  <BrowserRouter basename="/the-green-trade-website">
+  <BrowserRouter basename="/the-green-trade-website/">
     <App />
   </BrowserRouter>,
   // document.getElementById('root')
