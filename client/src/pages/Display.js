@@ -26,12 +26,22 @@ function Display(isAuth) {
         return(
              <div className = "post"> 
                 {/* {" "} */}
-                <div className ="title"> 
-                <h1>{post.title}</h1>
-                </div >
+                {/* <div className ="title">  */}
+                     <h1>{post.title}</h1>
+                {/* </div > */}
                 {/* <div className='postHeader'> 
                 {" "} */}
                 
+               
+                {/* {" "}
+                </div> */}
+                
+                <div>
+                <img src={post.url} alt="" className="post-image" />
+                </div>
+                <div className='postTextContainer'>Description: {post.postText}</div>
+                <h3>Contact Info: {post.contactInfo}</h3>
+                <h3>User: {post.author.name}</h3>
                 <div className='deletePost'> 
                     {isAuth && post.author.id === auth.currentUser.uid && (
                         <button onClick = {() => {deletePost(post.id)}}> 
@@ -41,14 +51,6 @@ function Display(isAuth) {
                     )}
                     
                 </div>
-                {/* {" "}
-                </div> */}
-                <div className='postTextContainer'>Description: {post.postText}</div>
-                <div>
-                <img src={post.url} alt="" className="post-image" />
-                </div>
-                <h3>Contact Info: {post.contactInfo}</h3>
-                <h3>User: {post.author.name}</h3>
             </div>
         );
     })}

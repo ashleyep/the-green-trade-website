@@ -42,6 +42,12 @@
 .left {
   padding-left: 10%;
 }
+.left div{
+  display:inline;
+}
+.right div {
+  display: inline;
+}
 .right {
   padding-right: 10%;
 }
@@ -51,3 +57,16 @@
   padding: 10px 15px;
   border-radius: 5px;
 } 
+
+
+#logout {
+  max-width: 100px;
+  border-radius: 10px;
+  /* background-color: #EFE4d4; */
+  border: 0px;
+}
+#logout:hover{
+  background-color: #EFE4D4;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

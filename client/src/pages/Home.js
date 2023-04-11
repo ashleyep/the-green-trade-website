@@ -5,6 +5,7 @@ import celina from '../assets/celina.png';
 import ashley from '../assets/ashley.png';
 import jennifer from '../assets/jennifer.png';
 import jane from '../assets/jane.png';
+import joan from '../assets/joan.png';
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
@@ -40,8 +41,8 @@ function Home() {
     </div>
     <div class='profileCard'>
     <h3>Joan</h3>
-    <>UI/UX Design</>
-      <img class ='profile' src = {HandEarth}></img>
+    <p>UI/UX Design</p>
+      <img class ='profile' src = {joan}></img>
     </div>
     <div class='profileCard'>
     <h3>Jennifer</h3>
