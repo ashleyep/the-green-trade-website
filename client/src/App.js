@@ -30,16 +30,16 @@ function App() {
   return (
     <div className="App">
       
-      <Router>
+      {/* <Router> */}
         <nav>
         <div className = "navbar">
           <div className="left">
-            <Link to='/' class="button"> Home </Link>
+            <Link to='/' className="button"> Home </Link>
             {!isAuth ? (
-                <Link to="/login" class="button"> Login </Link>
+                <Link to="/login" className="button"> Login </Link>
               ) : (
                 <>
-                <Link to='/createPost'class="button"> Create Post </Link>
+                <Link to='/createPost'className="button"> Create Post </Link>
                 <div id = "logout">
                 <button onClick ={signUserOut}> Logout </button>
                 </div>
@@ -52,8 +52,8 @@ function App() {
               <img id="title" src = {Title}/>
           </div>
           <div className="right">
-            <Link to= '/display' class="button" > Display </Link>
-            <Link to= '/contact' class="button" > Contact </Link>
+            <Link to= '/display' className="button" > Display </Link>
+            <Link to= '/contact' className="button" > Contact </Link>
           </div>   
         </div>
         </nav>
@@ -64,7 +64,7 @@ function App() {
           <Route path = '/createPost'  element={<CreatePost isAuth={isAuth}/>}/>
           <Route path = '/display'  element={<Display isAuth ={isAuth}/>}/>
         </Routes>
-      </Router>
+      {/* </Router> */}
    
     </div>
   );
