@@ -3,11 +3,11 @@ import '../styles/Contact.css'
 
 function contact() {
   return (
-    <div class="contact">
+    <div className="contact">
         <legend>Contact Us</legend>
-        <div class="form">
+        <div className="form">
           <form action ="https://formspree.io/f/xdovgwez" method = "POST">
-            <div class="fieldset">
+            <div className="fieldset">
               <fieldset>
                   
                   {/* <label for ="first name">First Name</label> */}

@@ -14,7 +14,7 @@ import {useState} from "react"
 import {signOut} from 'firebase/auth';
 import {auth} from "./firebase-config";
 import {Link} from 'react-router-dom';
-
+import React from 'react';
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -23,7 +23,7 @@ function App() {
     signOut(auth).then(()=> {
       localStorage.clear();
       setIsAuth(false); //set to false
-      window.location.pathname = "/login";
+      window.location.pathname = "the-green-trade/login";
     });
   };
 
@@ -57,6 +57,7 @@ function App() {
           </div>   
         </div>
         </nav>
+        
         <Routes>
           <Route path = '/'  element={<Home/>}/>
           <Route path = '/login'  element={<Login setIsAuth = {setIsAuth}/>}/>

@@ -30,35 +30,33 @@ function CreatePost({ isAuth }) {
         throw new Error("Error getting image URL");
       }
   
+      const currentUser = auth.currentUser;
+      if (!currentUser) {
+        throw new Error("User is not authenticated");
+      }
+  
       await addDoc(postsCollectionRef, {
         title,
         postText,
         contactInfo,
         url,
-        author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+        author: { name: currentUser.displayName, id: currentUser.uid },
       });
   
-      navigate("/Display");
+      navigate("the-green-trade/display");
     } catch (error) {
       console.error("Error creating post:", error.message);
     }
   };
   
-  
-  
-  useEffect(() => {
-    if (!isAuth) {
-      navigate("/login");
-    }
-  }, []);
 
   return (
     <div className="createPostPage">  
       <h1 id="createPostTitle">Create A Post</h1>
       <div className="cpContainer">
         <div className="inputGp" id="postTitle">
-          <label class="inputDetails"> Title </label>
-          <div class="inputDetails">
+          <label className="inputDetails"> Title </label>
+          <div className="inputDetails">
           <input
             placeholder="title..."
             onChange={(event) => {
@@ -69,8 +67,8 @@ function CreatePost({ isAuth }) {
         </div>
 
         <div className="inputGp" id="post">
-          <label class="inputDetails"> Post </label>
-          <div class="inputDetails">
+          <label className="inputDetails"> Post </label>
+          <div className="inputDetails">
             <textarea
             placeholder="description of your item..."
             onChange={(event) => {
@@ -82,7 +80,7 @@ function CreatePost({ isAuth }) {
 
         <div className="inputGp">
           <label className="inputGp" > Contact Info </label>
-          <div class="inputDetails">
+          <div className="inputDetails">
             <textarea
               placeholder="email/socials"
               onChange={(event) => {
@@ -93,13 +91,13 @@ function CreatePost({ isAuth }) {
       </div>
 
       <div className = "inputGp">
-        <label class="inputDetails" > Image </label>
-        <div class="inputFileDetails">
+        <label className="inputDetails" > Image </label>
+        <div className="inputFileDetails">
           <input type ="file" onChange={(event) => {setImageUpload(event.target.files[0])}}/>
         </div>
 
         </div>
-        <div class="inputDetails">
+        <div className="inputDetails">
           <button onClick={createPost}> Submit Post</button>
         </div>
         </div>
