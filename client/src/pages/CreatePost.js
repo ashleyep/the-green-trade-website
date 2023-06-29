@@ -43,7 +43,7 @@ function CreatePost({ isAuth }) {
         author: { name: currentUser.displayName, id: currentUser.uid },
       });
   
-      navigate("the-green-trade/display");
+      navigate("/display");
     } catch (error) {
       console.error("Error creating post:", error.message);
     }

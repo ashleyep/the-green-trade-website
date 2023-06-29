@@ -5,7 +5,7 @@ import { db } from "../firebase-config";
 import { auth } from "../firebase-config";
 import "../styles/Display.css";
 
-function Display(isAuth) {
+function Display(props) {
     const [postList, setPostList] = useState([]);
     const postsCollectionRef = collection(db, "posts");
 
@@ -35,7 +35,7 @@ function Display(isAuth) {
                         <h3>Contact Info: {post.contactInfo}</h3>
                         <h3>User: {post.author.name}</h3>
                         <div className='deletePost'>
-                            {isAuth && post.author.id === (auth.currentUser?.uid || '') && (
+                            {props.isAuth && post.author.id === (auth.currentUser?.uid || '') && (
                                 <button onClick={() => { deletePost(post.id) }}>
                                     delete
                                 </button>
