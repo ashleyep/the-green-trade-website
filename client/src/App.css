@@ -47,15 +47,20 @@
   border-radius: 5px;
 }
 
-#logout {
-  max-width: 100px;
-  border-radius: 10px;
-  /* background-color: #EFE4d4; */
-  border: 0px;
+#logout button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-#logout:hover {
+#logout button:hover {
   background-color: #EFE4D4;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
+

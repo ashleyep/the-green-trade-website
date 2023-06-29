@@ -54,7 +54,7 @@ function App() {
           <div className="right">
             <Link to= '/posts' className="button" > Posts </Link>
             <Link to= '/contact' className="button" > Contact </Link>
-            <Link to= '/profile' className="button" > Profile </Link>
+            {isAuth ?  <Link to= '/profile' className="button" > Profile </Link>: null }
           </div>   
         </div>
         </nav>
