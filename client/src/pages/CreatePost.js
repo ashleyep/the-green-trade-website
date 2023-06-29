@@ -43,7 +43,7 @@ function CreatePost({ isAuth }) {
         author: { name: currentUser.displayName, id: currentUser.uid },
       });
   
-      navigate("/display");
+      navigate("/posts");
     } catch (error) {
       console.error("Error creating post:", error.message);
     }

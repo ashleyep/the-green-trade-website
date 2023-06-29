@@ -52,7 +52,7 @@ function App() {
               <img id="title" src = {Title}/>
           </div>
           <div className="right">
-            <Link to= '/display' className="button" > Display </Link>
+            <Link to= '/posts' className="button" > Posts </Link>
             <Link to= '/contact' className="button" > Contact </Link>
             <Link to= '/profile' className="button" > Profile </Link>
           </div>   
@@ -64,7 +64,7 @@ function App() {
           <Route path = '/login'  element={<Login setIsAuth = {setIsAuth}/>}/>
           <Route path = '/contact'  element={<Contact/>}/>
           <Route path = '/createPost'  element={<CreatePost isAuth={isAuth}/>}/>
-          <Route path = '/display'  element={<Display isAuth ={isAuth}/>}/>
+          <Route path = '/posts'  element={<Display isAuth ={isAuth}/>}/>
           <Route path = '/profile'  element={<Profile isAuth ={isAuth}/>}/>
         </Routes>
       {/* </Router> */}
