@@ -7,7 +7,7 @@ import HandEarth from './assets/hand-earth.png';
 import Title from './assets/title.png';
 import Display from './pages/Display';
 import Contact from './pages/Contact';
-
+import Profile from './pages/Profile';
 import CreatePost from './pages/CreatePost';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {useState} from "react"
@@ -54,6 +54,7 @@ function App() {
           <div className="right">
             <Link to= '/display' className="button" > Display </Link>
             <Link to= '/contact' className="button" > Contact </Link>
+            <Link to= '/profile' className="button" > Profile </Link>
           </div>   
         </div>
         </nav>
@@ -64,6 +65,7 @@ function App() {
           <Route path = '/contact'  element={<Contact/>}/>
           <Route path = '/createPost'  element={<CreatePost isAuth={isAuth}/>}/>
           <Route path = '/display'  element={<Display isAuth ={isAuth}/>}/>
+          <Route path = '/profile'  element={<Profile isAuth ={isAuth}/>}/>
         </Routes>
       {/* </Router> */}
    
