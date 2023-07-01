@@ -40,7 +40,7 @@ function CreatePost({ isAuth }) {
         postText,
         contactInfo,
         url,
-        author: { name: currentUser.displayName, id: currentUser.uid },
+        author: { name: currentUser.displayName, id: currentUser.uid, photoURL: currentUser.photoURL },
       });
   
       navigate("/posts");
