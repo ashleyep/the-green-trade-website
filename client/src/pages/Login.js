@@ -16,6 +16,7 @@ function Login({setIsAuth}) {
         });  
     };
   return (
+    <div className = "fullPage" style={{ backgroundImage: "url('..assets/login.png')" }}>
     <div className ="loginPage">
         <div>
             <h2>Sign In With Google To Continue</h2>
@@ -26,6 +27,7 @@ function Login({setIsAuth}) {
 
         </div>
         
+    </div>
     </div>
   )
 }

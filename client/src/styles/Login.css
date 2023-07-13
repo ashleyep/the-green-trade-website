@@ -2,6 +2,9 @@
 .App {
   text-align: center;
 }
+.fullPage {
+  background-image: url('../assets/login.png');
+}
 .loginPage {
     display: grid;
     margin-left: auto;
@@ -12,6 +15,7 @@
     padding: 70px;
     border-radius: 15px;
     color: white;
+    
   }
 
 .login-with-google-btn {
@@ -31,3 +35,8 @@
   background-color: white;
 }
 
+
+/* add a background image to the body */
+/* .body {
+  background-image: url('../assets/login.png');
+} */

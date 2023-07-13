@@ -10,7 +10,7 @@
     font-size: large;
     border-radius: 20px;
     margin-top: 50px;
-    grid-gap: 40px;
+    grid-gap: 20px;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: 1fr;
     justify-content: center;
@@ -39,4 +39,5 @@ button {
     border-color: white;
     border-radius: 15px;
     border:0px;
+    cursor: pointer;
 }

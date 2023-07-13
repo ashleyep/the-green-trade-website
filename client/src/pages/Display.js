@@ -35,8 +35,8 @@ function Display(props) {
                         <div className=".post-image-container">
                             <img src={post.url} alt="" className="post-image" />
                         </div>
-                        <h3 className="name">User: {post.author.name}</h3>
-                        <div className='postTextContainer'>Description: {post.postText}</div>
+                        <h3 className="name">{post.author.name}</h3>
+                        <div className='description'>Description: {post.postText}</div>
                         <h3>Contact Info: {post.contactInfo}</h3>
                         <div className='deletePost'>
                             {props.isAuth && post.author.id === (auth.currentUser?.uid || '') && (
