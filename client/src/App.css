@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,500&display=swap');
+@import url(https://db.onlinewebfonts.com/c/ab89afb3d4431982e93f981d37ad50d0?family=CoconPro-Regular+Regular);
 
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 * {
   font-family: 'Lato', sans-serif;
@@ -25,11 +26,14 @@
 }
 
 #logo {
-  max-width: 7%;
+  max-width: 20%;
 }
 
-#title {
-  max-width: 60%;
+strong {
+  font-family: "CoconPro-Regular Regular";
+  font-size: 30px;
+  letter-spacing: 4px;
+  color: rgb(10, 85, 10);
 }
 
 .left, .right {

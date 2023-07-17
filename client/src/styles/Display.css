@@ -16,14 +16,8 @@
 /* Post image */
 .post-image {
   width: 80%;
-  /* margin-left: 60px; */
-  /* align-items: center; */
-  /* height: auto; */
-  /* margin-bottom: 20px; */
   margin-top: 50px;
 }
-
-/* Post title */
 
 /* Post text */
 .post-text {
@@ -40,10 +34,9 @@
 }
 
 .post-header .title {
-  flex: 1; /* Allow the title to take up the available space */
+  flex: 1; 
   font-size: 16px;
   margin: 0
-   /* Reset margin to remove any unwanted spacing */
 } 
 
 .profile-image {
@@ -54,55 +47,14 @@
 }
 
 .description {
-  margin-left: 10px;
   font-size: 14px;
   color: #999;
 }
 
-
-/* Post footer */
-/* .post-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 14px;
-  color: #999;
-} */
-
-/* .post-footer span {
-  margin-right: 10px;
+.name {
+  margin-left: 0 !important;
 }
 
-.post-footer a {
-  color: #3897f0;
-  text-decoration: none;
+.contact {
+  margin-left: 0;
 }
-*/
-
-
-
-/* Post image */
-/* .post-image-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-
-} */
-
-/* Post title */
-/* .title {
-  font-size: 20px;
-  margin-left: 100px;
-} */
-
-
-/* Post text */
-/* .post-text {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-  */
-
-

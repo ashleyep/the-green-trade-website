@@ -49,7 +49,7 @@ function App() {
           </div>
           <div className="middle">
               <img id="logo" src = {Logo}/>
-              <img id="title" src = {Title}/>
+              <strong>THE GREEN TRADE</strong>
           </div>
           <div className="right">
             <Link to= '/posts' className="button" > Posts </Link>
