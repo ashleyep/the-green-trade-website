@@ -1,0 +1,14 @@
+/* Custom CSS */
+.custom-navbar {
+  background-color: black; /* Replace 'your-desired-color' with the color of your choice */
+}
+
+.smaller-title {
+    max-height: 40px;
+}
+
+@media only screen and (max-width: 1215px) {
+.smaller-title {
+    max-height: 30px;
+}
+}
