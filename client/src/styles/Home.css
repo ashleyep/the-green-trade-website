@@ -1,36 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,500&display=swap');
-.about {
-    display: grid;
-    margin-top: 70px;
-    background-color: #587D6B;
-    color: white;
-    padding: 15px;
-    border-radius: 20px;
+.body {
+    background-color: #D8E9D3;
 }
 
-.about-img {
-    margin-top: 250px;
-    width: 10%;
+.about-container {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    padding-top: 5%;
 }
-.info {
-    margin-top: 160px;
+
+.button-container {
+    display: block;
+    width: 100%;
+    padding-top: 10%;
+}
+
+.startedBtn {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    color: #587D6B;
+    font-size: larger;
+    white-space: nowrap;
+    min-width: 200px;
+    padding: 10px;
+    width: fit-content;
+}
+
+.header-container {
+    display: block;
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 1px;
+}
+
+.header {
+    display: block;
+    font-weight: 500px;
     text-align: left;
+    margin-left: 120px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1115px) {
+.header {
+    text-align: center;
+    margin-left: 0px;
+}
+}
+.info-container {
+    display: block;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 1px;  
+}
+
+.info {
+    text-align: center;
     margin-left: 100px;
     margin-right: 100px;
     line-height: 2;
-    background-color: white;
-    color: #587D6B;
+    background-color: #587D6B;
+    color: white;
+    font-size: 20px;
     /* border: solid #587D6B 5px; */
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 20px;
-}
-.header {
-    font-weight: 500px;
-    text-align: left;
-    margin-left: 120px;
-    margin-top: 100px;
 }
 .imageBox {
     display: grid;
