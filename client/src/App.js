@@ -16,6 +16,7 @@ import {signOut} from 'firebase/auth';
 import {auth} from "./firebase-config";
 import {Link} from 'react-router-dom';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
+import { LinkContainer } from "react-router-bootstrap";
 
 
 // function App() {
