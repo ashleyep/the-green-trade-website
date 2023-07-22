@@ -36,32 +36,34 @@ function Home() {
           </p>
         </div>
       </div>
-      {/* By promoting a culture of conscious consumption, we hope to reduce the environmental impact of the fashion industry and create a more sustainable future for all.   */}
+      <div className="header-container">
+        <h1 class="header">Our Team</h1>
+      </div>
       <div className="imageBox">
         <div class="profileCard">
           <h3>Ashley</h3>
-          <p> Project Lead: Developer</p>
           <img class="profile" src={ashley}></img>
+          <p> Project Lead: Developer</p>
         </div>
         <div class="profileCard">
           <h3>Celina</h3>
-          <p>Developer</p>
           <img class="profile" src={celina}></img>
+          <p>Developer</p>
         </div>
         <div class="profileCard">
           <h3>Jane</h3>
-          <p>Developer & Designer</p>
           <img class="profile" src={jane}></img>
+          <p>Developer & Designer</p>
         </div>
         <div class="profileCard">
           <h3>Joan</h3>
-          <p>UI/UX Design</p>
           <img class="profile" src={joan}></img>
+          <p>UI/UX Design</p>
         </div>
         <div class="profileCard">
           <h3>Jennifer</h3>
-          <p>Developer</p>
           <img class="profile" src={jennifer}></img>
+          <p>Developer</p>
         </div>
 
         {/* <img class ='profile' src = {HandEarth}></img> */}

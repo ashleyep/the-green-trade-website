@@ -46,10 +46,14 @@
 }
 
 @media only screen and (max-width: 1115px) {
+.button-container {
+    padding-top: 4%;
+}
 .header {
     text-align: center;
     margin-left: 0px;
 }
+
 }
 .info-container {
     display: block;
@@ -81,7 +85,6 @@
     margin-bottom: 20px;
     width: 70%;
     height: 50%;
-    background-color: #587D6B;
     padding: 20px;
     border-radius: 15px;
     justify-content: center;
@@ -89,10 +92,34 @@
 
 .profile {
     max-width: 90%;
-    background-color: #ffffff;
+    padding: 10px;
 }
 
 .profileCard {
-    background-color: #ffffff;
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 1144px) {
+.header {
+    text-align: center;
+    margin-left: 0px;
+}
+.profileCard {
+    display: block;
+}
+.imageBox {
+    margin-top: 3%;
+    grid-template-columns: repeat(3, 1fr);;
+    grid-template-rows: repeat(2, 1fr);
+
+}
+}
+
+@media only screen and (max-width: 500px) {
+.imageBox {
+    margin-top: 3%;
+    grid-template-columns: repeat(2, 1fr);;
+    grid-template-rows: repeat(3, 1fr);
+
+}
 }
