@@ -26,6 +26,8 @@
     min-width: 200px;
     padding: 10px;
     width: fit-content;
+    text-decoration: none;
+    outline: none;
 }
 
 .header-container {
