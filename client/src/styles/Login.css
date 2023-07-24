@@ -1,33 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Lato:wght@300&family=Source+Serif+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&family=Lato:wght@300&family=Source+Serif+Pro&display=swap");
 .App {
   text-align: center;
 }
-.loginPage {
-    display: grid;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
-    width: 30%;
-    background-color: #587D6B;
-    padding: 70px;
-    border-radius: 15px;
-    color: white;
-  }
 
+.body {
+  height: 100%;
+  background-color: #d8e9d3;
+  padding-bottom: 800px;
+}
+
+
+.text {
+  padding-top: 5%;
+  color: black;
+  text-align: center;
+}
+
+
+.button-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2%;
+  font-size: 25px;
+}
 .login-with-google-btn {
-    border-radius: 15px;
-    width: 30%;
-    height: 100%;
-    background-color: #E7F0E4;
-    color: #587D6B;
-    padding-top: 5px;
-    padding-bottom: 2px;
-    justify-content: center;
-    margin-left: 35%;
+  height: 100%;
+  background-color: white;
+  padding:10px;
+  color: #587d6b;
 }
 
 .login-with-google-btn:hover {
-  color: #587D6B;
+  color: #587d6b;
   background-color: white;
 }
-
