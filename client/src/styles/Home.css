@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,500&display=swap');
 .body {
-    background-color: #D8E9D3;
+    background-image: url("../assets/background.png");
+    background-size: contain;
 }
+
 
 .about-container {
     display: block;
@@ -74,6 +76,7 @@
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    opacity: 60%;
 }
 .imageBox {
     display: grid;
@@ -91,8 +94,11 @@
 }
 
 .profile {
-    max-width: 90%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     padding: 10px;
+    object-fit: cover;
 }
 
 .profileCard {

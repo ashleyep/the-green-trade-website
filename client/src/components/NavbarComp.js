@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import{Navbar, Nav, NavDropdown, Form, FormControl, Button, Container} from 'react-bootstrap'
 import "../styles/NavbarComp.css";
 import WebsiteTitle from "../assets/title.png";
-import Logo from "../assets/logo.png"
+import Logo from "../assets/newLogo.png"
 import { LinkContainer } from "react-router-bootstrap";
 
 export default class NavbarComp extends Component {
@@ -11,13 +11,15 @@ export default class NavbarComp extends Component {
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
           <Navbar.Brand href="#home">
+          <img src={Logo} className="d-inline-block align-top smaller-title"/>
             <img
               alt=""
               src={WebsiteTitle}
               //   width="70"
               //   height="30"
               className="d-inline-block align-top smaller-title"
-            />{" "}
+            />
+            {" "}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
