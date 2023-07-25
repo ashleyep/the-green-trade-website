@@ -28,6 +28,9 @@ export default class NavbarComp extends Component {
               <LinkContainer to="/login">
                 <Nav.Link>Login</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/createPost">
+                <Nav.Link>Create Post</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/posts">
                 <NavDropdown title="Posts" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/contact">
