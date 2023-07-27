@@ -12,13 +12,11 @@ export default class NavbarComp extends Component {
         <Container>
           <Navbar.Brand href="#home">
           <img src={Logo} className="d-inline-block align-top smaller-title"/>
-            <img
-              alt=""
-              src={WebsiteTitle}
-              //   width="70"
-              //   height="30"
+            <div
               className="d-inline-block align-top smaller-title"
-            />
+            >
+              THE GREEN TRADE
+            </div>
             {" "}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -32,6 +30,9 @@ export default class NavbarComp extends Component {
               </LinkContainer>
               <LinkContainer to="/createPost">
                 <Nav.Link>Create Post</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/profile">
+                <Nav.Link>Profile</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/posts">
                 <NavDropdown title="Posts" id="basic-nav-dropdown">

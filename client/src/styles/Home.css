@@ -100,7 +100,9 @@
     padding: 10px;
     object-fit: cover;
 }
-
+.profile:hover {
+    border: solid #587D6B 5px;
+}
 .profileCard {
     border-radius: 10px;
 }
