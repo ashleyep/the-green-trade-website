@@ -30,14 +30,11 @@ const NavbarComp = () => {
           <div className="d-inline-block align-top smaller-title">THE GREEN TRADE</div>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
+          <Nav className="m1-auto">
             <LinkContainer to="/">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <Nav.Link onClick={isAuth ? handleLogout : null}>
-              {isAuth ? "Logout" : "Login"}
-            </Nav.Link>
             {isAuth && ( // Only render these links if isAuth is true
               <>
                 <LinkContainer to="/createPost">
@@ -55,11 +52,14 @@ const NavbarComp = () => {
                 </LinkContainer>
               </>
             )}
+             <Nav.Link onClick={isAuth ? handleLogout : null}>
+              {isAuth ? "Logout" : "Login"}
+            </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
             <Button variant="outline-success">Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
