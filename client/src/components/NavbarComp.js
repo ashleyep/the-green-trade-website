@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  NavDropdown,
+  Form,
+  FormControl,
+  Button,
+  Container,
+} from "react-bootstrap";
 import "../styles/NavbarComp.css";
 import WebsiteTitle from "../assets/title.png";
 import Logo from "../assets/newLogo.png";
@@ -8,7 +16,9 @@ import { signOut } from "firebase/auth"; // Make sure to import the signOut func
 import { auth } from "../firebase-config";
 
 const NavbarComp = () => {
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth") === "true");
+  const [isAuth, setIsAuth] = useState(
+    localStorage.getItem("isAuth") === "true"
+  );
 
   const handleLogout = () => {
     signOut(auth)
@@ -27,16 +37,28 @@ const NavbarComp = () => {
       <Container>
         <Navbar.Brand href="/the-green-trade-website">
           <img src={Logo} className="d-inline-block align-top smaller-title" />
-          <div className="d-inline-block align-top smaller-title">THE GREEN TRADE</div>{" "}
+          <div className="d-inline-block align-top smaller-title">
+            THE GREEN TRADE
+          </div>{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav"  className="justify-content-end">
-          <Nav className="m1-auto">
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
             <LinkContainer to="/">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
+            {!isAuth && (
+              <>
+                <Nav.Link onClick={!isAuth ? handleLogout : null}>
+                  {!isAuth ? "Login" : ""}
+                </Nav.Link>
+              </>
+            )}
             {isAuth && ( // Only render these links if isAuth is true
               <>
+                <Nav.Link onClick={isAuth ? handleLogout : null}>
+                  {isAuth ? "Logout" : ""}
+                </Nav.Link>
                 <LinkContainer to="/createPost">
                   <Nav.Link>Create Post</Nav.Link>
                 </LinkContainer>
@@ -45,21 +67,27 @@ const NavbarComp = () => {
                 </LinkContainer>
                 <LinkContainer to="/posts">
                   <NavDropdown title="Posts" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/contact">All Posts</NavDropdown.Item>
+                    <NavDropdown.Item href="/contact">
+                      All Posts
+                    </NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.1">Tops</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Bottoms</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">
+                      Bottoms
+                    </NavDropdown.Item>
                   </NavDropdown>
                 </LinkContainer>
               </>
             )}
-             <Nav.Link onClick={isAuth ? handleLogout : null}>
-              {isAuth ? "Logout" : "Login"}
-            </Nav.Link>
           </Nav>
-          {/* <Form className="d-flex">
-            <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
             <Button variant="outline-success">Search</Button>
-          </Form> */}
+          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
