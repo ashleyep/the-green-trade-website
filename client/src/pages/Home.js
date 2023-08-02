@@ -6,6 +6,8 @@ import jennifer from "../assets/jennifer.png";
 import jane from "../assets/jane.png";
 import joan from "../assets/joan.png";
 import { Link } from "react-router-dom";
+import TeamMember from "../components/TeamMember"; // Import the TeamMember component
+
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
@@ -40,35 +42,18 @@ function Home() {
         <h1 class="header">Our Team</h1>
       </div>
       <div className="imageBox">
-        <div class="profileCard">
-          <h3>Ashley</h3>
-          <img class="profile" src={ashley}></img>
-          <p> Project Lead: Developer</p>
-        </div>
-        <div class="profileCard">
-          <h3>Celina</h3>
-          <img class="profile" src={celina}></img>
-          <p>Developer</p>
-        </div>
-        <div class="profileCard">
-          <h3>Jane</h3>
-          <img class="profile" src={jane}></img>
-          <p>Developer & Designer</p>
-        </div>
-        <div class="profileCard">
-          <h3>Joan</h3>
-          <img class="profile" src={joan}></img>
-          <p>UI/UX Design</p>
-        </div>
-        <div class="profileCard">
-          <h3>Jennifer</h3>
-          <img class="profile" src={jennifer}></img>
-          <p>Developer</p>
-        </div>
-
+        <TeamMember
+          name="Ashley"
+          image={ashley}
+          description="Project Lead: Developer"
+        />
+        <TeamMember name="Celina" image={celina} description="Developer" />
+        <TeamMember name="Jane" image={jane} description="Developer & Designer" />
+        <TeamMember name="Joan" image={joan} description="UI/UX Design" />
+        <TeamMember name="Jennifer" image={jennifer} description="Developer" />
+      </div>
         {/* <img class ='profile' src = {HandEarth}></img> */}
       </div>
-    </div>
   );
 }
 

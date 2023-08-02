@@ -3,6 +3,7 @@ import { getDocs, deleteDoc, doc } from "firebase/firestore";
 import { collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import { auth } from "../firebase-config";
+import '../styles/Profile.css';
 
 function Profile(props) {
   const [postList, setPostList] = useState([]);
@@ -26,7 +27,9 @@ function Profile(props) {
   };
 
   return (
+
     <div className="displayPage">
+      <img src={auth.currentUser?.photoURL} alt="Profile" className="profile-image" />
       {postList.map((post) => {
         return (
           <div className="post" key={post.id}>
