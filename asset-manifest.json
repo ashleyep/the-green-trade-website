@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/the-green-trade-website/static/css/main.2db6ed70.css",
-    "main.js": "/the-green-trade-website/static/js/main.444ba6d8.js",
+    "main.css": "/the-green-trade-website/static/css/main.7d1a2170.css",
+    "main.js": "/the-green-trade-website/static/js/main.3bc71250.js",
     "static/js/787.c4e7f8f9.chunk.js": "/the-green-trade-website/static/js/787.c4e7f8f9.chunk.js",
-    "static/media/ashley.png": "/the-green-trade-website/static/media/ashley.95302fbf9130bc2b1e8b.png",
-    "static/media/jennifer.png": "/the-green-trade-website/static/media/jennifer.db53eb10baaf3df43be4.png",
-    "static/media/joan.png": "/the-green-trade-website/static/media/joan.eee23d6f9df01b397d6d.png",
-    "static/media/jane.png": "/the-green-trade-website/static/media/jane.880c4001b1315d4e4180.png",
-    "static/media/celina.png": "/the-green-trade-website/static/media/celina.3f35ea38a775f34d2b93.png",
+    "static/media/ashley.png": "/the-green-trade-website/static/media/ashley.6c4af00781d3422f0990.png",
+    "static/media/jennifer.png": "/the-green-trade-website/static/media/jennifer.aa0f9e787188cefae09b.png",
+    "static/media/celina.png": "/the-green-trade-website/static/media/celina.ec4251dda11abc5d0291.png",
+    "static/media/background.png": "/the-green-trade-website/static/media/background.cd307770887dae1f4444.png",
+    "static/media/jane.png": "/the-green-trade-website/static/media/jane.d2b48c427ac028f06e4a.png",
+    "static/media/joan.png": "/the-green-trade-website/static/media/joan.10b3e45cf742c2f72e1f.png",
     "static/media/hand-earth.png": "/the-green-trade-website/static/media/hand-earth.5a514ac31b7cf0eec467.png",
     "static/media/title.png": "/the-green-trade-website/static/media/title.09288e8cc2a9a4c72410.png",
     "index.html": "/the-green-trade-website/index.html",
-    "main.2db6ed70.css.map": "/the-green-trade-website/static/css/main.2db6ed70.css.map",
-    "main.444ba6d8.js.map": "/the-green-trade-website/static/js/main.444ba6d8.js.map",
+    "main.7d1a2170.css.map": "/the-green-trade-website/static/css/main.7d1a2170.css.map",
+    "main.3bc71250.js.map": "/the-green-trade-website/static/js/main.3bc71250.js.map",
     "787.c4e7f8f9.chunk.js.map": "/the-green-trade-website/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2db6ed70.css",
-    "static/js/main.444ba6d8.js"
+    "static/css/main.7d1a2170.css",
+    "static/js/main.3bc71250.js"
   ]
 }
