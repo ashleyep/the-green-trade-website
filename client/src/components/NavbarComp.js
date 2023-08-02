@@ -15,7 +15,7 @@ const NavbarComp = () => {
       .then(() => {
         localStorage.clear();
         setIsAuth(false); // Set to false after signing out
-        window.location.pathname = "the-green-trade/login";
+        window.location.pathname = "the-green-trade-website/login";
       })
       .catch((error) => {
         console.log("Error occurred during logout:", error);
@@ -25,7 +25,7 @@ const NavbarComp = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/the-green-trade-website">
           <img src={Logo} className="d-inline-block align-top smaller-title" />
           <div className="d-inline-block align-top smaller-title">THE GREEN TRADE</div>{" "}
         </Navbar.Brand>
