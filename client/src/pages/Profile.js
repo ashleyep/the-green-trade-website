@@ -6,6 +6,7 @@ import { auth } from "../firebase-config";
 import '../styles/Profile.css';
 
 function Profile(props) {
+  const [user, setUser] = useState(null);
   const [postList, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
@@ -19,7 +20,23 @@ function Profile(props) {
       setPostList(filteredPosts);
     };
     getPosts();
+    // firebase authentification observer 
+    // onAuthStateChanged function updates the user state
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in
+        setUser(user);
+      } else {
+        // User is signed out
+        setUser(null);
+      }
+    });
+
+    // Clean up the observer when the component unmounts
+    return () => unsubscribe();
   }, []); // Empty dependency array to run the effect only once
+
+
 
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
@@ -27,9 +44,27 @@ function Profile(props) {
   };
 
   return (
-
     <div className="displayPage">
-      <img src={auth.currentUser?.photoURL} alt="Profile" className="profile-image" />
+      {/* display user information */}
+      <div>
+        {user ? (
+          <div>
+            <h2>Welcome, {user.displayName}</h2>
+            <p>Email: {user.email}</p>
+            <p>User ID: {user.uid}</p>
+            {/* Display other user information as needed */}
+          </div>
+        ) : (
+          <p>Please sign in to view your profile.</p>
+        )}
+      </div>
+
+      <img
+        src={auth.currentUser?.photoURL}
+        alt="Profile"
+        className="profile-image"
+      />
+      {/* <h1>Hello {user.displayName}</h1> */}
       {postList.map((post) => {
         return (
           <div className="post" key={post.id}>
