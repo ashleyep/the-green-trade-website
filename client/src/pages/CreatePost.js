@@ -11,7 +11,7 @@ function CreatePost({ isAuth }) {
   const [postText, setPostText] = useState("");
   const [imageUpload, setImageUpload] = useState("");
   const [contactInfo, setContact] = useState("");
-  const [url, setUrl] = useState("");
+  // const [url, setUrl] = useState("");
 
   const postsCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
@@ -38,13 +38,13 @@ function CreatePost({ isAuth }) {
         author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
       });
   
-      navigate("/Display");
+      navigate("/Display"); // posts
     } catch (error) {
       console.error("Error creating post:", error.message);
     }
   };
   
-  
+
   
   useEffect(() => {
     if (!isAuth) {

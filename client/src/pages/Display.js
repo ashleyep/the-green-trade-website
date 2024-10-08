@@ -23,6 +23,7 @@ function Display(props) {
     };
 
     return (
+        //  implement post ordering
         <div className="displayPage">
             {postList.map((post) => {
                 return (

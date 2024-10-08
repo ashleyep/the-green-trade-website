@@ -48,7 +48,7 @@ function Profile(props) {
       {/* display user information */}
       <div>
         {user ? (
-          <div>
+          <div className = "profileInfo">
             <h2>Welcome, {user.displayName}</h2>
             <p>Email: {user.email}</p>
             <p>User ID: {user.uid}</p>
