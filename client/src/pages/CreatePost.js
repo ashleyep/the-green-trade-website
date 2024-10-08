@@ -36,6 +36,7 @@ function CreatePost({ isAuth }) {
         contactInfo,
         url,
         author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+        size,
       });
   
       navigate("/Display"); // posts
