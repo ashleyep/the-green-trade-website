@@ -104,7 +104,18 @@ useEffect(() => {
 
 const currentPost = postList[index];
 console.log(postList)
+const onSwipe = (direction) => {
+  console.log('You swiped: ' + direction)
+}
+
+const onCardLeftScreen = (myIdentifier) => {
+  console.log(myIdentifier + ' left the screen')
+}
+
+// TODO: Scale image 
+// Fix buttons to the bottom
 return (
+  
   <div className="MatchingPage">  
     <div className = "mpTitle">Find something you like</div>
     <div className = "mpsubTitle">Right arrow for what you like, left for things you don't</div>
@@ -125,14 +136,18 @@ return (
               )}
           </div>
           <div className = "buttons">
-          {/* <TinderCard>Hello Wo</TinderCard> */}
-            {/* <IconButton>
-              <ReplayIcon/>
-              </IconButton> */}
-            <button onClick={prevItem}>Previous</button>
-            <button onClick={nextItem}>Next</button>
-          </div>
+            
+            {/* <TinderCard>Hello Wo</TinderCard> */}
+              {/* <IconButton>
+                <ReplayIcon/>
+                </IconButton> */}
+              <button onClick={prevItem}>Previous</button>
+              <button onClick={nextItem}>Next</button>
+            </div>
+         
         </div>
+        
+      
       ) : (
         <p>looks like we ran out of clothes oop</p>
       )}

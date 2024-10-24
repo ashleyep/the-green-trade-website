@@ -47,7 +47,7 @@
   }
 
   .buttons {
-    display: flex; /* Use flexbox */
+    display: inline; /* Use flexbox */
     justify-content: center; /* Center the buttons */
     gap: 30px; /* Optional: add space between buttons */
     margin-top: 30px; /* Optional: add some space above the buttons */
