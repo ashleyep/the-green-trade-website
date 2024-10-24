@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 // import CloseIcon from '@mui/icons-material/Close'; // Correct import for Close icon
 // import FavoriteIcon from '@mui/icons-material/Favorite'; // Correct import for Favorite icon
 import { getDocs, deleteDoc, doc, addDoc, collection } from "firebase/firestore";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import IconButton from '@mui/material/IconButton';
 import { db, auth, storage } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage';
@@ -119,7 +121,7 @@ return (
   <div className="MatchingPage">  
     <div className = "mpTitle">Find something you like</div>
     <div className = "mpsubTitle">Right arrow for what you like, left for things you don't</div>
-    <div className="mpContainer">
+    {/* <div className="mpContainer"> */}
       {/* Display current post only */}
       {currentPost ? (
         <div className="post" key={currentPost.id}>
@@ -135,15 +137,7 @@ return (
                 </div>
               )}
           </div>
-          <div className = "buttons">
-            
-            {/* <TinderCard>Hello Wo</TinderCard> */}
-              {/* <IconButton>
-                <ReplayIcon/>
-                </IconButton> */}
-              <button onClick={prevItem}>Previous</button>
-              <button onClick={nextItem}>Next</button>
-            </div>
+        
          
         </div>
         
@@ -151,8 +145,19 @@ return (
       ) : (
         <p>looks like we ran out of clothes oop</p>
       )}
+
+    <div className = "buttons">
+            
+      {/* <TinderCard>Hello Wo</TinderCard> */}
+        {/* <IconButton>
+          <ReplayIcon/>
+          </IconButton> */}
+        {/* <FavoriteIcon/> */}
+        <button className = "but" onClick={prevItem}>Previous</button>
+        <button className = "but" onClick={nextItem}>Next</button>
+      </div>
     </div>
-  </div>
+
 );
 }
 
