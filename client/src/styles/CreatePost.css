@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
 }
+
 .cpContainer {
     display: grid;
     background-color: #587D6B;

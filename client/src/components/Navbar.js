@@ -2,8 +2,11 @@ import React from 'react';
 import LogoActual from '../assets/logo.png';
 import {Link} from 'react-router-dom';
 import '../styles/Navbar.css'
-// import { isAuth } from './/App.js';
 
+// OUTDATED: DO NOT USE
+
+
+// import { isAuth } from './/App.js';
 function Navbar() {
   // return (
   //   <div className = "navbar">
@@ -33,6 +36,7 @@ function Navbar() {
             <Link to='/post' className='navButton'> POST </Link>
             <Link to='/profile' className='navButton'> PROFILE </Link>
             <Link to='/login' className='navButton'> LOGIN </Link>
+            <Link to='/matching' className='navButton'> FIND CLOTHES! </Link>
       </div> 
     </div>
   );

@@ -1,0 +1,55 @@
+  
+  .MatchingPage {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .mpTitle {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .mpsubTitle {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .mpContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #587D6B;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+  .post {
+    margin: 10px 0;
+    width: 100%;
+    background-color:  #587D6B;
+    text-align: center;
+
+  }
+  
+  .imageContainer {
+    margin: 15px 0;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .buttons {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the buttons */
+    gap: 30px; /* Optional: add space between buttons */
+    margin-top: 30px; /* Optional: add some space above the buttons */
+  }
+
