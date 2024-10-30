@@ -52,11 +52,35 @@
   }
 
   .but {
-    padding: 10px;
-    font-size:20px;
-    border-radius: 10px;
+    width: 60px; /* Adjust the size of the button */
+    height: 60px; /* Adjust the size of the button */
+    border-radius: 50%; /* Makes the button circular */
+    background-color: white; /* Background color of the button */
+    color: 2px solid red; /* Optional: Add a border color */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    cursor: pointer; /* Change the cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  .but:hover {
+    background-color: lightgray; /* Change background on hover */
+  }
+  
+  .fa-heart {
+    color: rgb(92, 206, 134); /* Make the heart icon red */
+    font-size: 28px; /* Increase the size of the heart icon */
+  }
+  
+  .fa-undo {
+    color: rgb(205, 171, 48); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
   }
 
+  .rotate {
+    transform: rotate(180deg); /* Adjust the angle as needed */
+  }
   .post-title {
     color: white;
     font-size: 2em;

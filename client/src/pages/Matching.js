@@ -153,7 +153,7 @@ return (
           <ReplayIcon/>
           </IconButton> */}
         {/* <FavoriteIcon/> */}
-        <button className = "but" onClick={prevItem}><i class="fa fa-undo" aria-hidden="true"></i></button>
+        <button className = "but" onClick={prevItem}><i className="fa fa-undo" aria-hidden="true"></i></button>
         <button className = "but" onClick={nextItem}><i className="fa fa-heart" aria-hidden="true"></i></button>
       </div>
     </div>
