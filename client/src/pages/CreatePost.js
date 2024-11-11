@@ -3,14 +3,19 @@ import { addDoc, collection } from "firebase/firestore";
 import { db, auth, storage } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage';
-import {v4} from 'uuid'
+import {v4} from 'uuid';
 import '../styles/CreatePost.css';
+import '../components/SelectBox.js';
+import {SizeSelectBox, TypeSelectBox, StyleSelectBox} from '../components/SelectBox.js';
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [imageUpload, setImageUpload] = useState("");
   const [contactInfo, setContact] = useState("");
+  const [size, setSize] = useState("");
+  const [type, setType] = useState("");
+  const [style, setStyle] = useState("");
   // const [url, setUrl] = useState("");
 
   const postsCollectionRef = collection(db, "posts");
@@ -36,8 +41,6 @@ function CreatePost({ isAuth }) {
         contactInfo,
         url,
         author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
-        size,
-        
       });
   
       navigate("/Display"); // posts
@@ -93,6 +96,10 @@ function CreatePost({ isAuth }) {
             />
           </div>
       </div>
+
+      <TypeSelectBox setType = {setType} setSize = {setSize} />
+      <StyleSelectBox StyleSelect = {(val) => style = val} />
+
 
       <div className = "inputGp">
         <label class="inputDetails" > Image </label>
