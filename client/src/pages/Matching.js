@@ -18,6 +18,7 @@ function Matching({ isAuth }) {
   const [postList, setPostList] = useState([]);
   const [index, setIndex] = useState(0);
   const postsCollectionRef = collection(db, "posts");
+  const likesCollectionRef = collection(db, "likes");
   const [IsDescriptionVisible, setIsDescriptionVisible] = useState(false);
   let navigate = useNavigate();
 
@@ -37,6 +38,8 @@ function Matching({ isAuth }) {
       // Add sorting into this
       setPostList(filteredPosts);
     };
+    
+
     getPosts();
     // firebase authentification observer 
     // onAuthStateChanged function updates the user state
@@ -50,6 +53,7 @@ function Matching({ isAuth }) {
       }
     });
 
+
     
     // Clean up the observer when the component unmounts
     return () => unsubscribe();
@@ -60,8 +64,12 @@ useEffect(() => {
   const handleKeyDown = (event) => {
     if (event.key === 'ArrowRight') { // Right arrow key
       nextItem();
+
+
+      
     } else if (event.key === 'ArrowLeft') { // Left arrow key
       prevItem();
+      seeIfMatch();
     }
     else if  (event.key === 'ArrowDown'){
       showDecscrip();
@@ -79,9 +87,39 @@ useEffect(() => {
   };
 }, [postList]); // Re-run this effect if postList changes
 
+const seeIfMatch = async () => {
+  const data = await getDocs(likesCollectionRef);
+  const likes = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  
+  // add to the table 
+  await addDoc(likesCollectionRef, {
+    likee: currentPost.author.id,
+    liker: auth.currentUser.uid,
+    postid: currentPost.id
+  });
+
+
+  // want to see if the author of the post user just liked has liked any of the user's posts
+
+  // first get author of current post 
+  const author = currentPost.author.id;
+
+  // look into the likes table to find if the author has liked any of the user's posts, 
+  // so check where the liker is the author and the likee is the current user
+  const mutualLikes = likes.filter((like) => like.liker === author && like.likee === auth.currentUser?.uid);
+
+  mutualLikes.forEach((like) => {
+    console.log("Match found:", like);
+    console.log(like.postid);
+  });
+
+  
+};
+
   const nextItem = () => {
     setIndex((prevIndex) => (prevIndex + 1) % postList.length);
     closeDecscrip();
+    seeIfMatch();
   };
 
   // Function to go to the previous item
@@ -101,11 +139,10 @@ useEffect(() => {
     setIsDescriptionVisible(false);
   };
 //   }
-
 // //   const postsCollectionRef = collection(db, "posts");
 
 const currentPost = postList[index];
-console.log(postList)
+// console.log(postList)
 const onSwipe = (direction) => {
   console.log('You swiped: ' + direction)
 }
@@ -116,6 +153,8 @@ const onCardLeftScreen = (myIdentifier) => {
 
 // TODO: Scale image 
 // Fix buttons to the bottom
+
+
 return (
   
   <div className="MatchingPage">  
