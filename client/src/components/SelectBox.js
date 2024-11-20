@@ -1,14 +1,23 @@
-export function SizeSelectBox({ setSize }) {
+import React, { useState, useEffect } from "react";
+export function SizeSelectBox({type, setSize}) {
+    const getSizeOptions = () => {
+        switch (type){
+            case 'Shoes':
+                return ["Mens 3.5/Womens 5"]
+            default:
+                return []
+        }
+    }
     return (
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="2XL">2XL</option>
+                {getSizeOptions().map((size) => (
+                    <option key={size} value={size}>
+                    {size}
+                    </option>
+                )
+                )}
             </select>
         </div>
     );
@@ -60,12 +69,25 @@ export function PantsSizeSelectBox({ setSize }) {
     );
 }
 
+
+
 export function TypeSelectBox({ setType, setSize }) {
+    const TypeSelect = document.createElement("select")
+    const [sizeSelect, setSizeSelect] = useState()
+    const [selectedType, setSelectedType] = useState()
+
+
+    const handleSelect = (e) => {
+        setSelectedType(e.target.value)
+        setType(selectedType)
+        setSizeSelect(selectedType)
+    }
+
     return (
         <div>
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Clothing type:</label>
-            <select onChange={(e) => setType(e.target.value) }>
+            <select onChange={handleSelect}>
                 <option value="Shirts">Shirts</option>
                 <option value="Pants">Pants</option>
                 <option value="Shorts">Shorts</option>
@@ -77,8 +99,7 @@ export function TypeSelectBox({ setType, setSize }) {
                 <option value="Accessories">Accessories</option>
             </select>
         </div>
-        {e.target.value === 'Shoes' && <ShoeSizeSelectBox shoe = {setSize}/>}
-        {e.target.value === 'Pants' && <PantsSizeSelectBox pants = {setSize}/>}
+        {sizeSelect && <SizeSelectBox type={sizeSelect} setSize={setSize} />}
         </div>
     );
 }
