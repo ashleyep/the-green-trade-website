@@ -52,6 +52,9 @@ const NavbarComp = () => {
                 <LinkContainer to="/createPost">
                   <Nav.Link>Create Post</Nav.Link>
                 </LinkContainer>
+                <LinkContainer to="/Matching">
+                  <Nav.Link>Find Clothes!</Nav.Link>
+                </LinkContainer>
                 <LinkContainer to="/posts">
                   <NavDropdown title="Posts" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/posts">

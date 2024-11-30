@@ -1,0 +1,87 @@
+  
+  .MatchingPage {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .mpTitle {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .mpsubTitle {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  
+  .post {
+    /* margin: 10px 0; */
+    width: 80%;
+    color: white;
+    background-color:  #587D6B;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 400px;
+
+  }
+  
+  .imageContainer {
+    margin: 15px 0;
+  }
+  
+  .post-image {
+    max-width: 75%;
+    border-radius: 10px;
+    margin-top: 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .buttons {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the buttons */
+    gap: 240px; /* Optional: add space between buttons */
+    margin-top: 30px; /* Optional: add some space above the buttons */
+  }
+
+  .but {
+    width: 60px; /* Adjust the size of the button */
+    height: 60px; /* Adjust the size of the button */
+    border-radius: 50%; /* Makes the button circular */
+    background-color: white; /* Background color of the button */
+    color: 2px solid red; /* Optional: Add a border color */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    cursor: pointer; /* Change the cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  .but:hover {
+    background-color: lightgray; /* Change background on hover */
+  }
+  
+  .fa-heart {
+    color: rgb(92, 206, 134); /* Make the heart icon red */
+    font-size: 28px; /* Increase the size of the heart icon */
+  }
+  
+  .fa-undo {
+    color: rgb(205, 171, 48); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
+  }
+
+  .rotate {
+    transform: rotate(180deg); /* Adjust the angle as needed */
+  }
+  .post-title {
+    color: white;
+    font-size: 2em;
+  }
