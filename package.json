@@ -1,0 +1,15 @@
+{
+  "name": "the-green-trade-website",
+  "version": "1.0.0",
+  "description": "Help promote sustainable fashion by trading clothes with people nearby!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "firebase": "^10.13.2"
+  }
+}

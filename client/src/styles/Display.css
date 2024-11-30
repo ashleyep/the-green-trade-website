@@ -18,7 +18,7 @@ body {
 }
 
 .post {
-  width: 25%;
+  width: 400px;
   height: 500px;
   justify-content: center;
   margin-top: 10px;
@@ -31,15 +31,17 @@ body {
 
 /* Post image */
 .post-image {
-  width: 80%;
+  width:70%;
+  height: 70%;
   /* height: auto; */
   /* margin-bottom: 20px; */
   margin-top: 50px;
 }
 .post-header {
   display: grid;
+  width: 400px;
   grid-template-columns: 1fr 4fr;
-  background-color:#b8d0c4;
+  /* background-color:#b8d0c4; */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -60,19 +62,19 @@ body {
   grid-column: 1;
 }
 
-.post-image-container {
+/* .post-image-container {
   background-color: #b8d0c4;
-}
+} */
 
 .footer {
-  background-color: #e0e9e4; 
+  /* background-color: #e0e9e4;  */
+  width: 400px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  display: flex;
+  display: block;
 }
 
 .name {
   margin-left: 10px;
-  margin-top: 10px;
   font-size: 15px;
 }

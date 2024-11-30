@@ -51,7 +51,6 @@ function Profile(props) {
           <div className = "profileInfo">
             <h2>Welcome, {user.displayName}</h2>
             <p>Email: {user.email}</p>
-            <p>User ID: {user.uid}</p>
             {/* Display other user information as needed */}
           </div>
         ) : (
@@ -59,11 +58,11 @@ function Profile(props) {
         )}
       </div>
 
-      <img
+      {/* <img
         src={auth.currentUser?.photoURL}
         alt="Profile"
         className="profile-image"
-      />
+      /> */}
       {/* <h1>Hello {user.displayName}</h1> */}
       {postList.map((post) => {
         return (
