@@ -21,6 +21,11 @@
   margin-left: auto;
 }
 
+i {
+  color: #587D6B;
+  font-size: larger;
+}
+
 
 @media only screen and (max-width: 1215px) {
 .smaller-title {

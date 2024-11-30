@@ -45,29 +45,29 @@ const NavbarComp = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <LinkContainer to="/">
-              <Nav.Link>Home</Nav.Link>
+              <Nav.Link><i class="fa-solid fa-house"></i></Nav.Link>
             </LinkContainer>
             {isAuth && ( // Only render these links if isAuth is true
               <>
                 <LinkContainer to="/createPost">
-                  <Nav.Link>Create Post</Nav.Link>
+                  <Nav.Link><i class="fa-solid fa-square-plus"></i></Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/Matching">
-                  <Nav.Link>Find Clothes!</Nav.Link>
+                  <Nav.Link><i class="fa-solid fa-handshake-simple"></i></Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/posts">
-                  <NavDropdown title="Posts" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/posts">
+                  <Nav.Link> <i class="fa-solid fa-users"></i></Nav.Link>
+                    {/* <NavDropdown.Item href="/posts">
                       All Posts
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.1">Tops</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.1">
                       Bottoms
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                    </NavDropdown.Item> */}
+                  {/* </NavDropdown> */}
                 </LinkContainer>
                 <LinkContainer to="/profile">
-                  <Nav.Link>Profile</Nav.Link>
+                  <Nav.Link><i class="fa-solid fa-user"></i></Nav.Link>
                 </LinkContainer>
                 <Nav.Link onClick={isAuth ? handleLogout : null}>
                   {isAuth ? "Logout" : ""}
