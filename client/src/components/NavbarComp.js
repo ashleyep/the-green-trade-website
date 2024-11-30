@@ -57,7 +57,7 @@ const NavbarComp = () => {
                 </LinkContainer>
                 <LinkContainer to="/posts">
                   <NavDropdown title="Posts" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/contact">
+                    <NavDropdown.Item href="/posts">
                       All Posts
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.1">Tops</NavDropdown.Item>

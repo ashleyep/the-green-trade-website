@@ -38,10 +38,10 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className="header-container">
+      {/* <div className="header-container">
         <h1 class="header">Our Team</h1>
-      </div>
-      <div className="imageBox">
+      </div> */}
+      {/* <div className="imageBox">
         <TeamMember
           name="Ashley"
           image={ashley}
@@ -51,7 +51,7 @@ function Home() {
         <TeamMember name="Jane" image={jane} description="Developer & Designer" />
         <TeamMember name="Joan" image={joan} description="UI/UX Design" />
         <TeamMember name="Jennifer" image={jennifer} description="Developer" />
-      </div>
+      </div> */}
         {/* <img class ='profile' src = {HandEarth}></img> */}
       </div>
   );
