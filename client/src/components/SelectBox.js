@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 export function SizeSelectBox({type, setSize}) {
     const getSizeOptions = () => {
         switch (type){
@@ -71,16 +72,16 @@ export function PantsSizeSelectBox({ setSize }) {
 
 
 
-export function TypeSelectBox({ setType, setSize }) {
+export function TypeSelectBox({ setType, setSize, type }) {
     const TypeSelect = document.createElement("select")
     const [sizeSelect, setSizeSelect] = useState()
     const [selectedType, setSelectedType] = useState()
 
 
     const handleSelect = (e) => {
-        setSelectedType(e.target.value)
-        setType(selectedType)
-        setSizeSelect(selectedType)
+        // setSelectedType(e.target.value)
+        setType(e.target.value)
+        // setSizeSelect(selectedType)
     }
 
     return (
@@ -99,12 +100,13 @@ export function TypeSelectBox({ setType, setSize }) {
                 <option value="Accessories">Accessories</option>
             </select>
         </div>
-        {sizeSelect && <SizeSelectBox type={sizeSelect} setSize={setSize} />}
+        {sizeSelect && <SizeSelectBox type={type} setSize={setSize} />}
         </div>
     );
 }
 
 export function StyleSelectBox({ setStyle }) {
+
     return (
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Aesthetic/Style:</label>

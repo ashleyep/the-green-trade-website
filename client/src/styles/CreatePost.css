@@ -1,21 +1,39 @@
+
+
+
 .createPostPage {
     margin-top: 2%;
     display: flex;
     justify-content: center;
 }
 .cpContainer {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     display: grid;
     background-color: #587D6B;
     color: white;
-    font-size: large;
-    border-radius: 20px;
-    margin-top: 50px;
-    grid-gap: 40px;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
+    border-radius: 15px;
+    padding: 50px;
+    width: 50%;
+    text-align: left;
 }
+
+.inputDetails {
+    display: block;
+    margin-top: 10px;
+}
+
+button {
+    max-width: 200px;
+    border-radius: 10px;
+    background-color: white;
+    border-radius: 25px;
+    border:0px;
+}
+
+/* 
 
 #createPostTitle {
     display: block;
@@ -39,4 +57,4 @@ button {
     border-color: white;
     border-radius: 15px;
     border:0px;
-}
+} */ 
