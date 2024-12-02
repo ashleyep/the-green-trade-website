@@ -94,6 +94,8 @@ function Login({ setIsAuth }) {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
+          
           <button type="submit">
             {isNewUser ? "Sign Up" : "Login"}
           </button>

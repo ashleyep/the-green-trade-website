@@ -44,9 +44,9 @@ const NavbarComp = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <LinkContainer to="/">
+            {/* <LinkContainer to="/">
               <Nav.Link><i class="fa-solid fa-house"></i></Nav.Link>
-            </LinkContainer>
+            </LinkContainer> */}
             {isAuth && ( // Only render these links if isAuth is true
               <>
                 <LinkContainer to="/createPost">

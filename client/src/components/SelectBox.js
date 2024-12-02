@@ -88,7 +88,7 @@ export function TypeSelectBox({ setType, setSize, type }) {
         <div>
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Clothing type:</label>
-            <select onChange={handleSelect}>
+            <select onChange={handleSelect} >
                 <option value="Shirts">Shirts</option>
                 <option value="Pants">Pants</option>
                 <option value="Shorts">Shorts</option>
@@ -110,7 +110,7 @@ export function StyleSelectBox({ setStyle }) {
     return (
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Aesthetic/Style:</label>
-            <select onChange={(e) => setStyle(e.target.value)}>
+            <select onChange={(e) => setStyle(e.target.value)} multiple>
                 <option value="Goth">Goth</option>
                 <option value="Preppy">Preppy</option>
                 <option value="Vintage">Vintage</option>

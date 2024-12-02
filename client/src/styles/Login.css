@@ -23,6 +23,7 @@
   align-items: center;
   padding-top: 2%;
   font-size: 25px;
+  margin-bottom: 20px;
 }
 .login-with-google-btn {
   height: 100%;
@@ -35,3 +36,5 @@
   color: #587d6b;
   background-color: white;
 }
+
+

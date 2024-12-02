@@ -4,10 +4,15 @@ import { collection } from 'firebase/firestore';
 import { db } from "../firebase-config";
 import { auth } from "../firebase-config";
 import "../styles/Display.css";
+import { SizeSelectBox, TypeSelectBox, StyleSelectBox } from '../components/SelectBox.js';
 
 function Display(props) {
     const [postList, setPostList] = useState([]);
     const postsCollectionRef = collection(db, "posts");
+    const [showSizes, setSizes] = useState([])
+    const [showTypes, setTypes] = useState([])
+    const [showStyles, setStyles] = useState([])
+
 
     useEffect(() => {
         const getPosts = async () => {
@@ -21,6 +26,8 @@ function Display(props) {
         const postDoc = doc(db, "posts", id);
         await deleteDoc(postDoc);
     };
+
+    // sort posts by filters from the user 
 
     return (
         //  implement post ordering
