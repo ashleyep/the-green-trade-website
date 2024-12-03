@@ -78,6 +78,12 @@
     transition: transform 0.3s; 
   }
 
+  .fa-x {
+    color: rgb(255, 0, 0); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
+  }
+
   .rotate {
     transform: rotate(180deg); /* Adjust the angle as needed */
   }

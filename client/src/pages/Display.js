@@ -39,7 +39,7 @@ function Display(props) {
                             <h1 className="title">{post.title}</h1>
                             {/* <img src={post.author.photoURL} alt="Profile" className="profile-image"/> */}
                         </div>
-                        <div className=".post-image-container">
+                        <div>
                             <img src={post.url} alt="" className="post-image" />
                         </div>
                         <div className="footer">

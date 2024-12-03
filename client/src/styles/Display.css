@@ -10,6 +10,7 @@ body {
   justify-content: center;
   margin-top: 50px;
   margin-right: 20px;
+  gap: 20px; 
 }
 
 .profileInfo {
@@ -21,8 +22,9 @@ body {
   width: 400px;
   height: 500px;
   justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  /* margin-top: 10px; */
+  margin: 10px;
+  /* margin-bottom: 20px; */
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   margin-right: 30px;

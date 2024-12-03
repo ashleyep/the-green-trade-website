@@ -17,9 +17,11 @@ function Matching({ isAuth }) {
   const [user, setUser] = useState(null);
   const [postList, setPostList] = useState([]);
   const [index, setIndex] = useState(0);
+  const [myPosts, setMyPosts] = useState([]);
   const postsCollectionRef = collection(db, "posts");
   const likesCollectionRef = collection(db, "likes");
   const [IsDescriptionVisible, setIsDescriptionVisible] = useState(false);
+  const [mutualLikes, setMutualLikes] = useState([]);
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -35,8 +37,12 @@ function Matching({ isAuth }) {
       const filteredPosts = posts.filter(
         (post) => post.author.id !== auth.currentUser?.uid
       );
+      const myOwn = posts.filter(
+        (post) => post.author.id === auth.currentUser?.uid
+      );
       // Add sorting into this
       setPostList(filteredPosts);
+      setMyPosts(myOwn);
     };
     
 
@@ -57,7 +63,7 @@ function Matching({ isAuth }) {
     
     // Clean up the observer when the component unmounts
     return () => unsubscribe();
-  }, []); // Empty dependency array to run the effect only once
+  }, [mutualLikes]); // Empty dependency array to run the effect only once
 //   function displayPosts(index){
     
 useEffect(() => {
@@ -106,20 +112,32 @@ const seeIfMatch = async () => {
 
   // look into the likes table to find if the author has liked any of the user's posts, 
   // so check where the liker is the author and the likee is the current user
-  const mutualLikes = likes.filter((like) => like.liker === author && like.likee === auth.currentUser?.uid);
+  setMutualLikes(likes.filter((postLike) => postLike.liker === author && postLike.likee === auth.currentUser?.uid));
+
+  if (mutualLikes.length > 0) {
+    console.log("Match found");
+    console.log(mutualLikes[0].postid);
+    // console.log(postList);
+    const post = myPosts.find(post => post.id === mutualLikes[0].postid);
+    console.log(post);
+    alert("You have a match with " + currentPost.author.name);
+  }
+
 
   mutualLikes.forEach((like) => {
     console.log("Match found:", like);
-    console.log(like.postid);
+   
   });
 
   
 };
 
-  const nextItem = () => {
+  const nextItem = (value) => {
     setIndex((prevIndex) => (prevIndex + 1) % postList.length);
     closeDecscrip();
-    seeIfMatch();
+    if (value != "x") {
+      seeIfMatch();
+    }
   };
 
   // Function to go to the previous item
@@ -192,8 +210,12 @@ return (
           <ReplayIcon/>
           </IconButton> */}
         {/* <FavoriteIcon/> */}
+        <button className = "but" onClick = {() => nextItem("x")}><i className="fa-solid fa-x"></i></button>
+        
         <button className = "but" onClick={prevItem}><i className="fa fa-undo" aria-hidden="true"></i></button>
-        <button className = "but" onClick={nextItem}><i className="fa fa-heart" aria-hidden="true"></i></button>
+
+        <button className = "but" onClick={() => nextItem("yes")}><i className="fa fa-heart" aria-hidden="true"></i></button>
+        
       </div>
     </div>
 
