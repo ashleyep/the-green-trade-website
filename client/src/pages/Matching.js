@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
-// import IconButton from '@mui/material/IconButton'; // Correct import for IconButton
-// import ReplayIcon from '@mui/icons-material/Replay'; // Correct import for Replay icon
-// import CloseIcon from '@mui/icons-material/Close'; // Correct import for Close icon
-// import FavoriteIcon from '@mui/icons-material/Favorite'; // Correct import for Favorite icon
+import React, { useState, useEffect, useRef } from "react";
 import { getDocs, deleteDoc, doc, addDoc, collection } from "firebase/firestore";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import IconButton from '@mui/material/IconButton';
 import { db, auth, storage } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage';
 import {v4} from 'uuid'
-import TinderCard from 'react-tinder-card'
 import '../styles/Matching.css';
 function Matching({ isAuth }) {
 
@@ -19,7 +12,10 @@ function Matching({ isAuth }) {
   const [index, setIndex] = useState(0);
   const postsCollectionRef = collection(db, "posts");
   const likesCollectionRef = collection(db, "likes");
-  const [IsDescriptionVisible, setIsDescriptionVisible] = useState(false);
+  const [descriptionOffset, setDescriptionOffset] = useState(0);
+  const [descriptionHeight, setDescriptionHeight] = useState(0); 
+  const imageRef = useRef(null);
+  
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -59,24 +55,54 @@ function Matching({ isAuth }) {
     return () => unsubscribe();
   }, []); // Empty dependency array to run the effect only once
 //   function displayPosts(index){
-    
+
+
 useEffect(() => {
   const handleKeyDown = (event) => {
     if (event.key === 'ArrowRight') { // Right arrow key
+      event.preventDefault();
       nextItem();
 
 
-      
     } else if (event.key === 'ArrowLeft') { // Left arrow key
+      event.preventDefault();
       prevItem();
       seeIfMatch();
     }
     else if  (event.key === 'ArrowDown'){
-      showDecscrip();
-    }
+      event.preventDefault();
+      console.log("desc", descriptionOffset)
+      setDescriptionOffset((prevOffset) => {
+        if (-prevOffset > 0) {
+          setDescriptionHeight((prevHeight) => prevHeight - 10);
+          return prevOffset + 10;
+         
+        }
+        return prevOffset; // No change if condition isn't met
+      });
+        
+      }
+     
+
     else if  (event.key === 'ArrowUp'){
-      closeDecscrip();
-    }
+      event.preventDefault();
+      const imageHeight = imageRef.current?.offsetHeight || 0;
+      const maxOffset = -(imageHeight / 2); // Allow movement up to h
+      setDescriptionOffset((prevOffset) => {
+        if (prevOffset >= maxOffset) {
+          setDescriptionHeight((prevHeight) => prevHeight + 10);
+          return prevOffset - 10;
+         
+        }
+        return prevOffset; // No change if condition isn't met
+      });
+        
+      // setDescriptionOffset((prevOffset) => prevOffset - 10);
+    
+      console.log(maxOffset)
+      console.log(descriptionOffset)
+      }
+      
   };
 
   window.addEventListener('keydown', handleKeyDown);
@@ -117,42 +143,36 @@ const seeIfMatch = async () => {
 };
 
   const nextItem = () => {
+   
     setIndex((prevIndex) => (prevIndex + 1) % postList.length);
-    closeDecscrip();
     seeIfMatch();
+
   };
 
   // Function to go to the previous item
   const prevItem = () => {
     setIndex((prevIndex) => 
+      
       (prevIndex - 1 + postList.length) % postList.length
     );
-    closeDecscrip();
   };
 
-  const showDecscrip = () => {
-   setIsDescriptionVisible(true);
-
-  };
-
-  const closeDecscrip = () => {
-    setIsDescriptionVisible(false);
-  };
-//   }
-// //   const postsCollectionRef = collection(db, "posts");
 
 const currentPost = postList[index];
 // console.log(postList)
-const onSwipe = (direction) => {
-  console.log('You swiped: ' + direction)
-}
-
-const onCardLeftScreen = (myIdentifier) => {
-  console.log(myIdentifier + ' left the screen')
-}
-
 // TODO: Scale image 
 // Fix buttons to the bottom
+useEffect(() => {
+  // You can access the image height after it's rendered
+  if (imageRef.current) {
+    const imageHeight = imageRef.current.offsetHeight;
+    console.log("Image height:", imageHeight);
+  }
+  setDescriptionOffset(0)
+  setDescriptionHeight(0)
+}, [currentPost]); // Re-run when currentPost chang
+
+
 
 
 return (
@@ -166,18 +186,21 @@ return (
         <div className="post" key={currentPost.id}>
           <div className = "post-title">{currentPost.title}</div>
           <div>
-            <img src={currentPost.url} alt={currentPost.title} className="post-image"/>
+            <img src={currentPost.url} alt={currentPost.title} className="post-image" ref={imageRef}/>
           </div>
-          <div className="postTextContainer">
+          <div className="post-description"
+                       style={{ 
+                        bottom: `${0}px`, // Adjust position
+                        height: `${descriptionHeight+50}px`  // Adjust height
+                        }}>
+        
             {/* Show this only with down arrow */}
-            {IsDescriptionVisible && (
                 <div>
-                  Description: {currentPost.postText}
+                  {currentPost.postText}
                 </div>
-              )}
+              
           </div>
         
-         
         </div>
         
       
@@ -187,11 +210,7 @@ return (
 
     <div className = "buttons">
             
-      {/* <TinderCard>Hello Wo</TinderCard> */}
-        {/* <IconButton>
-          <ReplayIcon/>
-          </IconButton> */}
-        {/* <FavoriteIcon/> */}
+  
         <button className = "but" onClick={prevItem}><i className="fa fa-undo" aria-hidden="true"></i></button>
         <button className = "but" onClick={nextItem}><i className="fa fa-heart" aria-hidden="true"></i></button>
       </div>

@@ -15,11 +15,22 @@
     font-size: 1.2em;
     margin-bottom: 20px;
   }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Prevents padding from adding extra width */
+  }
   
   
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Prevents padding from adding extra width */
+  }
+
   .post {
     /* margin: 10px 0; */
-    width: 80%;
+    width: 100%;
     color: white;
     background-color:  #587D6B;
     text-align: center;
@@ -27,9 +38,10 @@
     justify-content: center;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 0px;
     margin: 0 auto;
     max-width: 400px;
+    position: relative; /* Added for layout control */
 
   }
   
@@ -42,6 +54,22 @@
     border-radius: 10px;
     margin-top: 0px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-description {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: height 0.2s ease;
+    /* max-height: 50%; Limiting max height */
+    overflow: hidden;
   }
 
   .buttons {
