@@ -59,15 +59,22 @@ function Matching({ isAuth }) {
 
 useEffect(() => {
   const handleKeyDown = (event) => {
+    // Like --> move forward, see if match
     if (event.key === 'ArrowRight') { // Right arrow key
       event.preventDefault();
-      nextItem();
+      seeIfMatch()
 
-
+     // Dislike --> move forward
     } else if (event.key === 'ArrowLeft') { // Left arrow key
       event.preventDefault();
+      nextItem();
+   
+    }
+     // Undo
+    else if (event.key === 'u') { // Left arrow key
+      event.preventDefault();
       prevItem();
-      seeIfMatch();
+  
     }
     else if  (event.key === 'ArrowDown'){
       event.preventDefault();
@@ -139,26 +146,45 @@ const seeIfMatch = async () => {
     console.log(like.postid);
   });
 
+  nextItem()
+
+  // could also add a call to next item here 
   
 };
 
+
   const nextItem = () => {
-   
-    setIndex((prevIndex) => (prevIndex + 1) % postList.length);
-    seeIfMatch();
+   // TODO: add a screen for running out of posts 
+    setIndex((prevIndex) => {
+     if (prevIndex  + 1 !== postList.length) {
+      prevIndex=  (prevIndex + 1 + postList.length) % postList.length
+      return prevIndex
+    }
+    return prevIndex
+  }
+    );
+
+
 
   };
 
   // Function to go to the previous item
   const prevItem = () => {
-    setIndex((prevIndex) => 
-      
-      (prevIndex - 1 + postList.length) % postList.length
+    setIndex((prevIndex) => {
+      //if we get to beginning don't go back
+     if (prevIndex - 1 >0) {
+      prevIndex=  (prevIndex - 1 + postList.length) % postList.length
+      return prevIndex
+    } 
+    return prevIndex }
     );
   };
 
 
+
+
 const currentPost = postList[index];
+console.log(postList)
 // console.log(postList)
 // TODO: Scale image 
 // Fix buttons to the bottom
@@ -179,7 +205,7 @@ return (
   
   <div className="MatchingPage">  
     <div className = "mpTitle">Find something you like</div>
-    <div className = "mpsubTitle">Right arrow for what you like, left for things you don't</div>
+    <div className = "mpsubTitle">right arrow for what you like, left for things you don't, and 'u' to go back</div>
     {/* <div className="mpContainer"> */}
       {/* Display current post only */}
       {currentPost ? (
@@ -210,9 +236,10 @@ return (
 
     <div className = "buttons">
             
-  
+        <button className = "but" onClick={nextItem}><i className="fa fa-x" aria-hidden="true"></i></button>
         <button className = "but" onClick={prevItem}><i className="fa fa-undo" aria-hidden="true"></i></button>
-        <button className = "but" onClick={nextItem}><i className="fa fa-heart" aria-hidden="true"></i></button>
+        <button className = "but" onClick={seeIfMatch}><i className="fa fa-heart" aria-hidden="true"></i></button>
+       
       </div>
     </div>
 

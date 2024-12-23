@@ -75,7 +75,7 @@
   .buttons {
     display: flex; /* Use flexbox */
     justify-content: center; /* Center the buttons */
-    gap: 240px; /* Optional: add space between buttons */
+    gap: 100px; /* Optional: add space between buttons */
     margin-top: 30px; /* Optional: add some space above the buttons */
   }
 
@@ -96,12 +96,17 @@
   }
   
   .fa-heart {
-    color: rgb(92, 206, 134); /* Make the heart icon red */
+    color: rgb(92, 206, 134); /* Make the heart icon  green */
     font-size: 28px; /* Increase the size of the heart icon */
   }
   
   .fa-undo {
     color: rgb(205, 171, 48); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
+  }
+  .fa-x {
+    color: rgb(205, 48, 48); /* Change the color of the undo icon */
     font-size: 24px; /* Increase the size of the undo icon */
     transition: transform 0.3s; 
   }
