@@ -1,7 +1,13 @@
   
   .MatchingPage {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Optional, controls stacking direction */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     text-align: center;
     padding: 20px;
+    height: 100vh; /* Full viewport height for vertical centering */
+    box-sizing: border-box; /* Ensures padding doesn't affect size */
   }
   
   .mpTitle {
@@ -20,41 +26,37 @@
     padding: 0;
     box-sizing: border-box; /* Prevents padding from adding extra width */
   }
-  
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Prevents padding from adding extra width */
-  }
 
-  .post {
-    /* margin: 10px 0; */
-    width: 100%;
-    color: white;
-    background-color:  #587D6B;
+  .m-post {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 550px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    background-color:  #587D6B;
+    border-radius: 10px;  
     padding: 0px;
-    margin: 0 auto;
     max-width: 400px;
-    position: relative; /* Added for layout control */
-
+    position: relative;
   }
   
+
   .imageContainer {
     margin: 15px 0;
   }
   
-  .post-image {
-    max-width: 75%;
+  .m-post-image {
+    margin-top: 10px;
+    width:70%;
+    height: auto;
     border-radius: 10px;
-    margin-top: 0px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
+
 
   .post-description {
     width: 100%;
@@ -71,6 +73,36 @@
     /* max-height: 50%; Limiting max height */
     overflow: hidden;
   }
+  
+  .additional-attributes {
+    background-color: #D8E9D3; /* Soft green background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    font-size: 14px;
+    color: #555; /* Dark grey text color */
+  }
+  
+  .additional-attributes p {
+    margin: 10px 0;
+    line-height: 1.6;
+    text-align: left;
+    
+  }
+
+  .additional-attributes strong {
+  margin-right: 10px; /* Space between the label and value */
+   }
+  
+  .additional-attributes p::before {
+    content: "✨ "; /* Cute star icon before each line */
+    font-size: 18px;
+
+  }
+
+  
 
   .buttons {
     display: flex; /* Use flexbox */

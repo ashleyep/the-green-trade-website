@@ -93,8 +93,8 @@ useEffect(() => {
 
     else if  (event.key === 'ArrowUp'){
       event.preventDefault();
-      const imageHeight = imageRef.current?.offsetHeight || 0;
-      const maxOffset = -(imageHeight / 2); // Allow movement up to h
+      // const imageHeight = imageRef.current?.offsetHeight || 0;
+      const maxOffset = -(150); // Allow movement up to h
       setDescriptionOffset((prevOffset) => {
         if (prevOffset >= maxOffset) {
           setDescriptionHeight((prevHeight) => prevHeight + 10);
@@ -172,7 +172,7 @@ const seeIfMatch = async () => {
   const prevItem = () => {
     setIndex((prevIndex) => {
       //if we get to beginning don't go back
-     if (prevIndex - 1 >0) {
+     if (prevIndex >0) {
       prevIndex=  (prevIndex - 1 + postList.length) % postList.length
       return prevIndex
     } 
@@ -209,10 +209,10 @@ return (
     {/* <div className="mpContainer"> */}
       {/* Display current post only */}
       {currentPost ? (
-        <div className="post" key={currentPost.id}>
+        <div className="m-post" key={currentPost.id}>
           <div className = "post-title">{currentPost.title}</div>
           <div>
-            <img src={currentPost.url} alt={currentPost.title} className="post-image" ref={imageRef}/>
+            <img src={currentPost.url} alt={currentPost.title} className="m-post-image" ref={imageRef}/>
           </div>
           <div className="post-description"
                        style={{ 
@@ -220,10 +220,14 @@ return (
                         height: `${descriptionHeight+50}px`  // Adjust height
                         }}>
         
-            {/* Show this only with down arrow */}
                 <div>
                   {currentPost.postText}
                 </div>
+                <div className="additional-attributes">
+              <p><strong>Size:</strong> {currentPost.size || "N/A"}</p>
+              <p><strong>Style:</strong> {currentPost.style || "N/A"}</p>
+              <p><strong>Type:</strong> {currentPost.type || "N/A"}</p>
+            </div>
               
           </div>
         
