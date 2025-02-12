@@ -125,11 +125,18 @@ const seeIfMatch = async () => {
   const likes = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   
   // add to the table 
+
+  // check if the user has already liked this post
+  const alreadyLiked = likes.filter((like) => like.liker === auth.currentUser?.uid && like.postid === currentPost.id);
+  if (alreadyLiked.length > 0) {
+    console.log("already liked")
+  }
+  // add like 
   await addDoc(likesCollectionRef, {
     likee: currentPost.author.id,
     liker: auth.currentUser.uid,
     postid: currentPost.id
-  });
+  });       
 
 
   // want to see if the author of the post user just liked has liked any of the user's posts

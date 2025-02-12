@@ -123,6 +123,7 @@
     cursor: pointer; /* Change the cursor to pointer on hover */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
   }
+  
   .but:hover {
     background-color: lightgray; /* Change background on hover */
   }
