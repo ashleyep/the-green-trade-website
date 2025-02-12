@@ -6,7 +6,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 import '../styles/CreatePost.css';
 import '../components/SelectBox.js';
-import { SizeSelectBox, TypeSelectBox, StyleSelectBox } from '../components/SelectBox.js';
+import { SizeSelectBox, TypeSelectBox, StyleSelectBox, ShoeSizeSelectBox } from '../components/SelectBox.js';
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -85,6 +85,10 @@ function CreatePost({ isAuth }) {
         <textarea
           placeholder="description of your item..."
           onChange={(event) => {
+            let cutoff = 62;
+            if(event.target.value.length > cutoff){
+              event.target.value = event.target.value.substring(0,62);
+            }
             setPostText(event.target.value);
           }}
         />
@@ -99,12 +103,22 @@ function CreatePost({ isAuth }) {
         />
 
         <div class="inputDetails">
-          <TypeSelectBox setType={setType} setSize={setSize} type={type} />
+          <TypeSelectBox setType={setType}/>
         </div>
 
         <div class="inputDetails">
           <StyleSelectBox setStyle={setStyle} />
         </div>
+       
+        {type === "Shoes" ? (
+          <div className="inputDetails">
+            <ShoeSizeSelectBox setSize={setSize} />
+          </div>
+        ) : (
+          <div className="inputDetails">
+            <SizeSelectBox setSize={setSize} />
+          </div>
+        )}
 
         <div class="inputDetails">
           <button onClick={createPost}> Submit Post</button>

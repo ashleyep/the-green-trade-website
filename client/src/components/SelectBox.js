@@ -29,26 +29,15 @@ export function ShoeSizeSelectBox({ setSize }) {
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
-                <option value="Mens 3.5/Womens 5">Mens 3.5 Womens 5</option>
-                <option value="Mens 4/Womens 5.5">Mens 4 Womens 5.5</option>
-                <option value="Mens 4.5/Womens 6">Mens 4.5 Womens 6</option>
-                <option value="Mens 5/Womens 6.5">Mens 5 Womens 6.5</option>
-                <option value="Mens 5.5/Womens 7">Mens 5.5/Womens 7</option>
-                <option value="Mens 6/Womens 7.5">Mens 6/Womens 7.5</option>
-                <option value="Mens 6.5/Womens 8">Mens 6.5/Womens 8</option>
-                <option value="Mens 7/Womens 8.5">"Mens 7/Womens 8.5"</option>
-                <option value="Mens 7.5/Womens 9">"Mens 7.5/Womens 9"</option>
-                <option value="Mens 8/Womens 9.5">"Mens 8/Womens 9.5"</option>
-                <option value="Mens 8.5/Womens 10">"Mens 8/Womens 9.5"</option>
-                <option value="Mens 9/Womens 10.5">Mens 9/Womens 10.5</option>
-                <option value="Mens 9.5/Womens 11">Mens 9.5/Womens 11</option>
-                <option value="Mens 10/Womens 11.5">Mens 10/Womens 11.5</option>
-                <option value="Mens 10.5/Womens 12">Mens 10.5/Womens 12</option>
-                <option value="Mens 11/Womens 12.5">Mens 11/Womens 12.5</option>
-                <option value="Mens 11.5/Womens 13">Mens 11.5/Womens 13</option>
-                <option value="Mens 12/Womens 13.5">Mens 12/Womens 13.5</option>
-                <option value="Mens 12.5/Womens 14">Mens 12.5/Womens 14</option>
-                <option value="Mens 13/Womens 14.5">Mens 13/Womens 14.5</option>
+            {Array.from({ length: 20 }, (_, i) => {
+                let mensSize = 3 + i * 0.5;  // Calculate men's size
+                let womensSize = mensSize + 1.5; // Women's size is always +1.5
+                return (
+                <option key={i} value={`Mens ${mensSize}/Womens ${womensSize}`}>
+                    Mens {mensSize} / Womens {womensSize}
+                </option>
+                );
+            })}
             </select>
         </div>
     );
