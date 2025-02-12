@@ -168,6 +168,12 @@ const seeIfMatch = async () => {
 
   };
 
+  // Function to format the title
+  const formatTitle = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+
+  }
+
   // Function to go to the previous item
   const prevItem = () => {
     setIndex((prevIndex) => {
@@ -210,7 +216,7 @@ return (
       {/* Display current post only */}
       {currentPost ? (
         <div className="m-post" key={currentPost.id}>
-          <div className = "post-title">{currentPost.title}</div>
+          <div className = "post-title">{formatTitle(currentPost.title)}</div>
           <div>
             <img src={currentPost.url} alt={currentPost.title} className="m-post-image" ref={imageRef}/>
           </div>
