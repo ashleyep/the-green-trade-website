@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage';
 import {v4} from 'uuid'
 import '../styles/Matching.css';
+import MatchPopup from "../components/PopUp";
+
+
+
 function Matching({ isAuth }) {
 
   const [user, setUser] = useState(null);
@@ -129,8 +133,11 @@ const seeIfMatch = async () => {
   // check if the user has already liked this post
   const alreadyLiked = likes.filter((like) => like.liker === auth.currentUser?.uid && like.postid === currentPost.id);
   if (alreadyLiked.length > 0) {
-    console.log("already liked")
+    console.log("already liked, going to the next item");
+    nextItem()
+    return;
   }
+   
   // add like 
   await addDoc(likesCollectionRef, {
     likee: currentPost.author.id,
@@ -176,10 +183,11 @@ const seeIfMatch = async () => {
   };
 
   // Function to format the title
-  const formatTitle = (word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-
-  }
+  const formatTitle = (title) => {
+    return title.split(" ").map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(" ");
+  };
 
   // Function to go to the previous item
   const prevItem = () => {
