@@ -33,7 +33,7 @@ function Home() {
       </div>
       <div className="button-container">
       <Link 
-          to={isLoggedIn ? "/post" : "/login"} 
+          to={isLoggedIn ? "/profile" : "/login"} 
           className="startedBtn"
         >
           LET'S GET STARTED
