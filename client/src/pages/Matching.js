@@ -18,6 +18,16 @@ function Matching({ isAuth }) {
   const likesCollectionRef = collection(db, "likes");
   const [descriptionOffset, setDescriptionOffset] = useState(0);
   const [descriptionHeight, setDescriptionHeight] = useState(0); 
+  const [ifFirstPost, setifFirstPost] = useState(true); 
+  const [ifLastPost, setifLastPost] = useState(false); 
+  const [match, setMatch] = useState(null);
+
+  
+  const handleMatchFound = (like) => {
+      setMatch(like);
+      console.log("handleMatchFound called");
+  };
+
   const imageRef = useRef(null);
   
   let navigate = useNavigate();
@@ -158,11 +168,13 @@ const seeIfMatch = async () => {
   mutualLikes.forEach((like) => {
     console.log("Match found:", like);
     console.log(like.postid);
+    // show popup of match found 
+    handleMatchFound(like); // Show popup
+    // {match && <MatchPopup match={match} onClose={() => setMatch(null)} />}
   });
 
   nextItem()
 
-  // could also add a call to next item here 
   
 };
 
@@ -171,16 +183,31 @@ const seeIfMatch = async () => {
    // TODO: add a screen for running out of posts 
     setIndex((prevIndex) => {
      if (prevIndex  + 1 !== postList.length) {
-      prevIndex=  (prevIndex + 1 + postList.length) % postList.length
+      prevIndex= (prevIndex + 1 + postList.length) % postList.length
+      setifLastPost(false)
       return prevIndex
     }
+    // Change the color of the like and dislike - only undo button 
+    setifLastPost(true)
     return prevIndex
+    
   }
     );
 
 
 
   };
+  
+  // Function for the popup
+  function MatchPopup({ match, onClose }) {
+    return (
+        <div className="popupStyle">
+            <h2>You've got a match! </h2>
+            <p>You matched with {match.postid}.</p>
+            <button onClick={onClose}>Close</button>
+        </div>
+    );
+  }
 
   // Function to format the title
   const formatTitle = (title) => {
@@ -195,8 +222,11 @@ const seeIfMatch = async () => {
       //if we get to beginning don't go back
      if (prevIndex >0) {
       prevIndex=  (prevIndex - 1 + postList.length) % postList.length
+      setifFirstPost(false)
       return prevIndex
+
     } 
+    setifFirstPost(true)
     return prevIndex }
     );
   };
@@ -260,7 +290,8 @@ return (
       )}
 
     <div className = "buttons">
-            
+        
+        
         <button className = "but" onClick={nextItem}><i className="fa fa-x" aria-hidden="true"></i></button>
         <button className = "but" onClick={prevItem}><i className="fa fa-undo" aria-hidden="true"></i></button>
         <button className = "but" onClick={seeIfMatch}><i className="fa fa-heart" aria-hidden="true"></i></button>
