@@ -1,24 +1,33 @@
 import React, { useState, useEffect } from "react";
 
+/* POTENTIALLY DELETING
 export function SizeSelectBox({type, setSize}) {
     const getSizeOptions = () => {
-        switch (type){
+        switch (type) {
             case 'Shoes':
-                return ["Mens 3.5/Womens 5"]
+                return <ShoeSizeSelectBox setSize={setSize} />;
+            case 'Pants':
+                return <BaseSizeSelectBox setSize={setSize} />;
+            case 'Shirts':
+                return <BaseSizeSelectBox setSize={setSize} />;
+            // Add more cases as needed
             default:
-                return []
+                return <BaseSizeSelectBox setSize={setSize} />;
         }
     }
+}
+*/
+export function BaseSizeSelectBox({ setSize }) {
     return (
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
-                {getSizeOptions().map((size) => (
-                    <option key={size} value={size}>
-                    {size}
-                    </option>
-                )
-                )}
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="2XL">2XL</option>
             </select>
         </div>
     );
@@ -48,12 +57,12 @@ export function PantsSizeSelectBox({ setSize }) {
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
-                <option value="7">XS</option>
-                <option value="8">S</option>
-                <option value="9">M</option>
-                <option value="10">L</option>
-                <option value="11">XL</option>
-                <option value="12">2XL</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="2XL">2XL</option>
             </select>
         </div>
     );
@@ -62,19 +71,18 @@ export function PantsSizeSelectBox({ setSize }) {
 
 
 export function TypeSelectBox({ setType, setSize, type }) {
-    const TypeSelect = document.createElement("select")
+    //const TypeSelect = document.createElement("select")
     const [sizeSelect, setSizeSelect] = useState()
     const [selectedType, setSelectedType] = useState()
 
 
     const handleSelect = (e) => {
-        // setSelectedType(e.target.value)
+        //setSelectedType(e.target.value)
         setType(e.target.value)
         // setSizeSelect(selectedType)
     }
 
     return (
-        <div>
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Clothing type:</label>
             <select onChange={handleSelect}>
@@ -88,9 +96,7 @@ export function TypeSelectBox({ setType, setSize, type }) {
                 <option value="Dresses">Dresses</option>
                 <option value="Accessories">Accessories</option>
             </select>
-        </div>
-        {sizeSelect && <SizeSelectBox type={type} setSize={setSize} />}
-        </div>
+        </div>        
     );
 }
 

@@ -6,7 +6,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 import '../styles/CreatePost.css';
 import '../components/SelectBox.js';
-import { SizeSelectBox, TypeSelectBox, StyleSelectBox, ShoeSizeSelectBox } from '../components/SelectBox.js';
+import { BaseSizeSelectBox, ShoeSizeSelectBox, PantsSizeSelectBox, TypeSelectBox, StyleSelectBox} from '../components/SelectBox.js';
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -16,6 +16,8 @@ function CreatePost({ isAuth }) {
   const [size, setSize] = useState("");
   const [type, setType] = useState("");
   const [style, setStyle] = useState("");
+  const [charCount, setCharCount] = useState("");
+  const charLimit = 62;
   // const [url, setUrl] = useState("");
 
   const postsCollectionRef = collection(db, "posts");
@@ -61,6 +63,21 @@ function CreatePost({ isAuth }) {
     }
   }, []);
 
+  // Function to render the appropriate size select component based on the type
+  const renderSizeSelectBox = () => {
+  switch (type) {
+      case 'Shoes':
+          return <ShoeSizeSelectBox setSize={setSize} />;
+      case 'Pants':
+          return <PantsSizeSelectBox setSize={setSize} />;
+      case 'Shirts':
+          return <BaseSizeSelectBox setSize={setSize} />;
+      // Add more cases as needed
+      default:
+          return <BaseSizeSelectBox setSize={setSize} />;
+  }
+};
+
   return (
     <div className="createPostPage">
       <h1 id="createPostTitle">Create A Post</h1>
@@ -84,14 +101,20 @@ function CreatePost({ isAuth }) {
 
         <textarea
           placeholder="description of your item..."
+          value={postText} //Ensure controlled component behavior
           onChange={(event) => {
-            let cutoff = 62;
-            if(event.target.value.length > cutoff){
-              event.target.value = event.target.value.substring(0,62);
+            let inputText = event.target.value;
+            if(inputText.length > charLimit){
+              inputText = inputText.substring(0,charLimit);
             }
-            setPostText(event.target.value);
+            setPostText(inputText);
+            setCharCount(inputText.length); //Update character amount
           }}
         />
+
+        <p style={{ fontSize: "14px", color: charCount === charLimit ? "orange" : "white" }}>
+          {charCount}/{charLimit} characters
+        </p>
 
 
         <label className="inputDetails" > Contact Info </label>
@@ -110,15 +133,10 @@ function CreatePost({ isAuth }) {
           <StyleSelectBox setStyle={setStyle} />
         </div>
        
-        {type === "Shoes" ? (
-          <div className="inputDetails">
-            <ShoeSizeSelectBox setSize={setSize} />
-          </div>
-        ) : (
-          <div className="inputDetails">
-            <SizeSelectBox setSize={setSize} />
-          </div>
-        )}
+        <div className="inputDetails">
+          {renderSizeSelectBox()}
+        </div>
+        
 
         <div class="inputDetails">
           <button onClick={createPost}> Submit Post</button>
