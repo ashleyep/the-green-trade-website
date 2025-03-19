@@ -184,11 +184,12 @@ const seeIfMatch = async () => {
     setIndex((prevIndex) => {
      if (prevIndex  + 1 !== postList.length) {
       prevIndex= (prevIndex + 1 + postList.length) % postList.length
-      setifLastPost(false)
+      setifFirstPost(false)
       return prevIndex
     }
     // Change the color of the like and dislike - only undo button 
     setifLastPost(true)
+
     return prevIndex
     
   }
@@ -222,7 +223,10 @@ const seeIfMatch = async () => {
       //if we get to beginning don't go back
      if (prevIndex >0) {
       prevIndex=  (prevIndex - 1 + postList.length) % postList.length
-      setifFirstPost(false)
+      setifLastPost(false)
+      if (prevIndex === 0){
+        setifFirstPost(true)
+      }
       return prevIndex
 
     } 
@@ -292,9 +296,13 @@ return (
     <div className = "buttons">
         
         
-        <button className = "but" onClick={nextItem}><i className="fa fa-x" aria-hidden="true"></i></button>
-        <button className = "but" onClick={prevItem}><i className="fa fa-undo" aria-hidden="true"></i></button>
-        <button className = "but" onClick={seeIfMatch}><i className="fa fa-heart" aria-hidden="true"></i></button>
+        <button className = "but" onClick={nextItem}><i className={ifLastPost ? "fa fa-x-dis" : "fa fa-x"} aria-hidden="true"></i>
+        </button>
+        <button className = "but" onClick={!ifFirstPost ? prevItem : null}>
+  <i className={ifFirstPost ? "fa fa-undo-dis" : "fa fa-undo"} aria-hidden="true"></i>
+</button>
+        <button className = "but" onClick={seeIfMatch}><i className={ifLastPost ? "fa fa-heart-dis" : "fa fa-heart"} aria-hidden="true"></i>
+        </button>
        
       </div>
     </div>
