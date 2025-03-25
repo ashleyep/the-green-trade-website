@@ -65,17 +65,25 @@ function CreatePost({ isAuth }) {
 
   // Function to render the appropriate size select component based on the type
   const renderSizeSelectBox = () => {
-  switch (type) {
+  try{
+    switch (type) {
+      case 'Error': 
+        throw new Error("Invalid Clothing Type"); 
       case 'Shoes':
           return <ShoeSizeSelectBox setSize={setSize} />;
       case 'Pants':
           return <PantsSizeSelectBox setSize={setSize} />;
       case 'Shirts':
           return <BaseSizeSelectBox setSize={setSize} />;
-      // Add more cases as needed
       default:
           return <BaseSizeSelectBox setSize={setSize} />;
   }
+  }
+  catch(error){
+    console.error("Please select clothing type"); 
+    return <p style={{ color: "red" }}>Please select valid clothing type</p>;
+  }
+
 };
 
   return (
@@ -88,6 +96,7 @@ function CreatePost({ isAuth }) {
 
         <input
           placeholder="title..."
+          type="text"
           onChange={(event) => {
             setTitle(event.target.value);
           }}
@@ -99,8 +108,9 @@ function CreatePost({ isAuth }) {
 
         <label class="inputDetails"> Post </label>
 
-        <textarea
+        <input
           placeholder="description of your item..."
+          type = "text"
           value={postText} //Ensure controlled component behavior
           onChange={(event) => {
             let inputText = event.target.value;
@@ -118,8 +128,9 @@ function CreatePost({ isAuth }) {
 
 
         <label className="inputDetails" > Contact Info </label>
-        <textarea
+        <input
           placeholder="email/socials"
+          type = "text"
           onChange={(event) => {
             setContact(event.target.value);
           }}

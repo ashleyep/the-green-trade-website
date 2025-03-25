@@ -22,6 +22,7 @@ export function BaseSizeSelectBox({ setSize }) {
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
+                <option value="Null">Please Select Size</option>
                 <option value="XS">XS</option>
                 <option value="S">S</option>
                 <option value="M">M</option>
@@ -38,6 +39,7 @@ export function ShoeSizeSelectBox({ setSize }) {
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
+            <option value="Null">Please Select Size</option>
             {Array.from({ length: 20 }, (_, i) => {
                 let mensSize = 3 + i * 0.5;  // Calculate men's size
                 let womensSize = mensSize + 1.5; // Women's size is always +1.5
@@ -57,12 +59,22 @@ export function PantsSizeSelectBox({ setSize }) {
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
+                <option value="Null">Please Select Size</option>
                 <option value="XS">XS</option>
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
                 <option value="XL">XL</option>
                 <option value="2XL">2XL</option>
+                {Array.from({ length: 13 }, (_, i) => {
+                    const size = i * 2;
+                    return (
+                        <option key={size} value={size}>
+                            {size}
+                        </option>
+                    );
+                })}
+
             </select>
         </div>
     );
@@ -77,15 +89,14 @@ export function TypeSelectBox({ setType, setSize, type }) {
 
 
     const handleSelect = (e) => {
-        //setSelectedType(e.target.value)
         setType(e.target.value)
-        // setSizeSelect(selectedType)
     }
 
     return (
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Clothing type:</label>
             <select onChange={handleSelect}>
+                <option value="Null">Please Select Type</option>
                 <option value="Shirts">Shirts</option>
                 <option value="Pants">Pants</option>
                 <option value="Shorts">Shorts</option>
@@ -106,6 +117,7 @@ export function StyleSelectBox({ setStyle }) {
         <div className="custom-select" style={{ width: '200px' }}>
             <label className="inputDetails">Aesthetic/Style:</label>
             <select onChange={(e) => setStyle(e.target.value)}>
+                <option value="Null">Please Select Style</option>
                 <option value="Goth">Goth</option>
                 <option value="Preppy">Preppy</option>
                 <option value="Vintage">Vintage</option>
