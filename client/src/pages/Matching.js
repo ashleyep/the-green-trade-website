@@ -170,7 +170,7 @@ const seeIfMatch = async () => {
     console.log(like.postid);
     // show popup of match found 
     handleMatchFound(like); // Show popup
-    // {match && <MatchPopup match={match} onClose={() => setMatch(null)} />}
+    MatchPopup({ like });
   });
 
   nextItem()
@@ -199,12 +199,12 @@ const seeIfMatch = async () => {
   };
   
   // Function for the popup
-  function MatchPopup({ match, onClose }) {
+  function MatchPopup({ match }) {
     return (
         <div className="popupStyle">
             <h2>You've got a match! </h2>
             <p>You matched with {match.postid}.</p>
-            <button onClick={onClose}>Close</button>
+            <button>Close</button>
         </div>
     );
   }
