@@ -6,22 +6,32 @@ import jennifer from "../assets/jennifer.png";
 import jane from "../assets/jane.png";
 import joan from "../assets/joan.png";
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 import TeamMember from "../components/TeamMember"; // Import the TeamMember component
 
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
 function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Replace with your actual auth state
+
   return (
     <div className="body">
       <div className="about-container">
         <h1 class="about">A NO COST, GREEN ALTERNATIVE TO SHOPPING</h1>
       </div>
       <div className="button-container">
-        <Link to="/login" className="startedBtn" href="Login.js">
+        {isLoggedIn ? ( //if logged in, go to matching
+        <Link to="/matching" className="startedBtn" href="Matching.js">
           {" "}
           LET'S GET STARTED{" "}
         </Link>
+        ) : (
+          <Link to="/login" className="startedBtn" href="Login.js">
+          {" "}
+          LET'S GET STARTED{" "}
+        </Link>
+        )}
       </div>
       <div className="header-container">
         <h1 class="header">About Us</h1>

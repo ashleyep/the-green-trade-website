@@ -15,6 +15,7 @@ function Matching({ isAuth }) {
   const [descriptionOffset, setDescriptionOffset] = useState(0);
   const [descriptionHeight, setDescriptionHeight] = useState(0); 
   const imageRef = useRef(null);
+  const [showMatchModal, setShowMatchModal] = useState(false); //match ui popup
   
   let navigate = useNavigate();
 
@@ -131,7 +132,6 @@ const seeIfMatch = async () => {
     postid: currentPost.id
   });
 
-
   // want to see if the author of the post user just liked has liked any of the user's posts
 
   // first get author of current post 
@@ -144,12 +144,14 @@ const seeIfMatch = async () => {
   mutualLikes.forEach((like) => {
     console.log("Match found:", like);
     console.log(like.postid);
+    setShowMatchModal(true);
   });
 
   nextItem()
 
   // could also add a call to next item here 
   
+
 };
 
 
@@ -199,10 +201,12 @@ useEffect(() => {
 }, [currentPost]); // Re-run when currentPost chang
 
 
-
-
 return (
   
+
+  //ummmm do showMatchModal stuff here!!!
+  //blah blah blah
+
   <div className="MatchingPage">  
     <div className = "mpTitle">Find something you like</div>
     <div className = "mpsubTitle">right arrow for what you like, left for things you don't, and 'u' to go back</div>
@@ -246,6 +250,7 @@ return (
        
       </div>
     </div>
+
 
 );
 }

@@ -62,6 +62,11 @@ function CreatePost({ isAuth }) {
       navigate("/login");
     }
   }, []);
+  
+  //makes sure all of the fields have something in them
+  const postNotEmpty = () => {
+    return title && postText && imageUpload && type && style;
+  }
 
   // Function to render the appropriate size select component based on the type
   const renderSizeSelectBox = () => {
@@ -150,7 +155,10 @@ function CreatePost({ isAuth }) {
         
 
         <div class="inputDetails">
-          <button onClick={createPost}> Submit Post</button>
+          <button onClick={createPost} disabled={!postNotEmpty()}>
+          Submit Post
+          </button>
+          
         </div>
       </div>
     </div>
