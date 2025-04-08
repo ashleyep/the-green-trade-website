@@ -296,12 +296,12 @@ return (
     <div className = "buttons">
         
         
-        <button className = "but" onClick={nextItem}><i className={ifLastPost ? "fa fa-x-dis" : "fa fa-x"} aria-hidden="true"></i>
+        <button className = "but" onClick={nextItem}><i className={ifLastPost ? "fa fa-x-dis fa fa-x" : "fa fa-x"} aria-hidden="true"></i>
         </button>
         <button className = "but" onClick={!ifFirstPost ? prevItem : null}>
-  <i className={ifFirstPost ? "fa fa-undo-dis" : "fa fa-undo"} aria-hidden="true"></i>
+  <i className={ifFirstPost ? "fa fa-undo-dis fa-undo" : " fa fa-undo"} aria-hidden="true"></i>
 </button>
-        <button className = "but" onClick={seeIfMatch}><i className={ifLastPost ? "fa fa-heart-dis" : "fa fa-heart"} aria-hidden="true"></i>
+        <button className = "but" onClick={seeIfMatch}><i className={ifLastPost ? "fa fa-heart-dis fa-heart" : "fa fa-heart"} aria-hidden="true"></i>
         </button>
        
       </div>
