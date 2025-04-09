@@ -177,4 +177,17 @@
     padding: 20px;
     borderRadius: 8px;
     boxShadow: 0px 0px 10px rgba(0,0,0,0.2);
-};
+}
+
+.matchPopUp {
+    background-color: #587D6B;
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    z-index: 100;
+    font-family: bold;
+}
