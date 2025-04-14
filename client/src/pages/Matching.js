@@ -29,6 +29,7 @@ function Matching({ isAuth }) {
   };
 
   const imageRef = useRef(null);
+  const [showMatchModal, setShowMatchModal] = useState(false); //match ui popup
   
   let navigate = useNavigate();
 
@@ -254,10 +255,12 @@ useEffect(() => {
 }, [currentPost]); // Re-run when currentPost chang
 
 
-
-
 return (
   
+
+  //ummmm do showMatchModal stuff here!!!
+  //blah blah blah
+
   <div className="MatchingPage">  
     <div className = "mpTitle">Find something you like</div>
     <div className = "mpsubTitle">right arrow for what you like, left for things you don't, and 'u' to go back</div>
@@ -306,6 +309,7 @@ return (
        
       </div>
     </div>
+
 
 );
 }

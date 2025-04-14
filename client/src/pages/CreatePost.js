@@ -6,7 +6,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 import '../styles/CreatePost.css';
 import '../components/SelectBox.js';
-import { SizeSelectBox, TypeSelectBox, StyleSelectBox } from '../components/SelectBox.js';
+import { BaseSizeSelectBox, ShoeSizeSelectBox, PantsSizeSelectBox, TypeSelectBox, StyleSelectBox} from '../components/SelectBox.js';
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -16,6 +16,8 @@ function CreatePost({ isAuth }) {
   const [size, setSize] = useState("");
   const [type, setType] = useState("");
   const [style, setStyle] = useState("");
+  const [charCount, setCharCount] = useState("");
+  const charLimit = 62;
   // const [url, setUrl] = useState("");
 
   const postsCollectionRef = collection(db, "posts");
@@ -60,6 +62,34 @@ function CreatePost({ isAuth }) {
       navigate("/login");
     }
   }, []);
+  
+  //makes sure all of the fields have something in them
+  const postNotEmpty = () => {
+    return title && postText && imageUpload && type && style;
+  }
+
+  // Function to render the appropriate size select component based on the type
+  const renderSizeSelectBox = () => {
+  try{
+    switch (type) {
+      case 'Error': 
+        throw new Error("Invalid Clothing Type"); 
+      case 'Shoes':
+          return <ShoeSizeSelectBox setSize={setSize} />;
+      case 'Pants':
+          return <PantsSizeSelectBox setSize={setSize} />;
+      case 'Shirts':
+          return <BaseSizeSelectBox setSize={setSize} />;
+      default:
+          return <BaseSizeSelectBox setSize={setSize} />;
+  }
+  }
+  catch(error){
+    console.error("Please select clothing type"); 
+    return <p style={{ color: "red" }}>Please select valid clothing type</p>;
+  }
+
+};
 
   return (
     <div className="createPostPage">
@@ -71,6 +101,7 @@ function CreatePost({ isAuth }) {
 
         <input
           placeholder="title..."
+          type="text"
           onChange={(event) => {
             setTitle(event.target.value);
           }}
@@ -82,32 +113,52 @@ function CreatePost({ isAuth }) {
 
         <label class="inputDetails"> Post </label>
 
-        <textarea
+        <input
           placeholder="description of your item..."
+          type = "text"
+          value={postText} //Ensure controlled component behavior
           onChange={(event) => {
-            setPostText(event.target.value);
+            let inputText = event.target.value;
+            if(inputText.length > charLimit){
+              inputText = inputText.substring(0,charLimit);
+            }
+            setPostText(inputText);
+            setCharCount(inputText.length); //Update character amount
           }}
         />
 
+        <p style={{ fontSize: "14px", color: charCount === charLimit ? "orange" : "white" }}>
+          {charCount}/{charLimit} characters
+        </p>
+
 
         <label className="inputDetails" > Contact Info </label>
-        <textarea
+        <input
           placeholder="email/socials"
+          type = "text"
           onChange={(event) => {
             setContact(event.target.value);
           }}
         />
 
         <div class="inputDetails">
-          <TypeSelectBox setType={setType} setSize={setSize} type={type} />
+          <TypeSelectBox setType={setType}/>
         </div>
 
         <div class="inputDetails">
           <StyleSelectBox setStyle={setStyle} />
         </div>
+       
+        <div className="inputDetails">
+          {renderSizeSelectBox()}
+        </div>
+        
 
         <div class="inputDetails">
-          <button onClick={createPost}> Submit Post</button>
+          <button onClick={createPost} disabled={!postNotEmpty()}>
+          Submit Post
+          </button>
+          
         </div>
       </div>
     </div>

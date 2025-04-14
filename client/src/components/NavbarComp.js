@@ -57,13 +57,16 @@ const NavbarComp = () => {
                 </LinkContainer>
                 <LinkContainer to="/posts">
                   <NavDropdown title="Posts" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/posts">
-                      All Posts
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Tops</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">
-                      Bottoms
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/posts">All Posts</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Shirts</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Pants</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Shorts</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Shoes</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Sweaters</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Jackets</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Skirts</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Dresses</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Accessories</NavDropdown.Item>
                   </NavDropdown>
                 </LinkContainer>
                 <LinkContainer to="/profile">

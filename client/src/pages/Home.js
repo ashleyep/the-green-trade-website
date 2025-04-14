@@ -6,25 +6,14 @@ import jennifer from "../assets/jennifer.png";
 import jane from "../assets/jane.png";
 import joan from "../assets/joan.png";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import TeamMember from "../components/TeamMember"; // Import the TeamMember component
 
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
 function Home() {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    // Check if the token exists in localStorage
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      setIsLoggedIn(true);  // User is logged in
-    } else {
-      setIsLoggedIn(false); // User is not logged in
-    }
-  }, []); // Runs only once when the component mounts
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Replace with your actual auth state
 
   return (
     <div className="body">
@@ -32,13 +21,17 @@ function Home() {
         <h1 class="about">A NO COST, GREEN ALTERNATIVE TO SHOPPING</h1>
       </div>
       <div className="button-container">
-      <Link 
-          to={isLoggedIn ? "/profile" : "/login"} 
-          className="startedBtn"
-        >
-          LET'S GET STARTED
+        {isLoggedIn ? ( //if logged in, go to matching
+        <Link to="/matching" className="startedBtn" href="Matching.js">
+          {" "}
+          LET'S GET STARTED{" "}
         </Link>
-
+        ) : (
+          <Link to="/login" className="startedBtn" href="Login.js">
+          {" "}
+          LET'S GET STARTED{" "}
+        </Link>
+        )}
       </div>
       <div className="header-container">
         <h1 class="header">About Us</h1>
