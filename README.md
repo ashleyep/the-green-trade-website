@@ -13,4 +13,6 @@ Help promote sustainable fashion by trading clothes with people nearby!
 * npm install 
 * npm start
 
-
+## Deploy 
+cd client
+npm run deploy
