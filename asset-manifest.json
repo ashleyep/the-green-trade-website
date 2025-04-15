@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/the-green-trade-website/static/css/main.a0ef065c.css",
+    "main.js": "/the-green-trade-website/static/js/main.06409f6e.js",
+    "static/js/453.419a5d54.chunk.js": "/the-green-trade-website/static/js/453.419a5d54.chunk.js",
+    "static/media/ashley.png": "/the-green-trade-website/static/media/ashley.6c4af00781d3422f0990.png",
+    "static/media/jennifer.png": "/the-green-trade-website/static/media/jennifer.aa0f9e787188cefae09b.png",
+    "static/media/celina.png": "/the-green-trade-website/static/media/celina.ec4251dda11abc5d0291.png",
+    "static/media/fa-solid-900.ttf": "/the-green-trade-website/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/fa-brands-400.ttf": "/the-green-trade-website/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/background.png": "/the-green-trade-website/static/media/background.cd307770887dae1f4444.png",
+    "static/media/fa-solid-900.woff2": "/the-green-trade-website/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/the-green-trade-website/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/jane.png": "/the-green-trade-website/static/media/jane.d2b48c427ac028f06e4a.png",
+    "static/media/joan.png": "/the-green-trade-website/static/media/joan.10b3e45cf742c2f72e1f.png",
+    "static/media/fa-regular-400.ttf": "/the-green-trade-website/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/hand-earth.png": "/the-green-trade-website/static/media/hand-earth.5a514ac31b7cf0eec467.png",
+    "static/media/fa-regular-400.woff2": "/the-green-trade-website/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/title.png": "/the-green-trade-website/static/media/title.09288e8cc2a9a4c72410.png",
+    "static/media/fa-v4compatibility.ttf": "/the-green-trade-website/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/the-green-trade-website/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/the-green-trade-website/index.html",
+    "main.a0ef065c.css.map": "/the-green-trade-website/static/css/main.a0ef065c.css.map",
+    "main.06409f6e.js.map": "/the-green-trade-website/static/js/main.06409f6e.js.map",
+    "453.419a5d54.chunk.js.map": "/the-green-trade-website/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a0ef065c.css",
+    "static/js/main.06409f6e.js"
+  ]
+}
