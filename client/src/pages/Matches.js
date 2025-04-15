@@ -88,6 +88,10 @@ function Matches({ isAuth }) {
   };
 
   return (
+    <div>
+    <div className="Title">
+      Your Matches
+      </div>
     <div className="matches-grid">
       {loading ? (
         <p>Loading...</p>
@@ -139,6 +143,7 @@ function Matches({ isAuth }) {
           );
         })
       )}
+    </div>
     </div>
   );
 }

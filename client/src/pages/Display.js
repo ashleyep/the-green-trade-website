@@ -37,6 +37,10 @@ function Display(props) {
 
     return (
         //  implement post ordering
+        <div>
+        <div className="profileInfo">
+        <h2>{selectedCategory}</h2> {/* Display selected category */}
+      </div>
         <div className="displayPage">
             {filteredPosts.map((post) => {
                 return (
@@ -60,6 +64,7 @@ function Display(props) {
                     </div>
                 );
             })}
+        </div>
         </div>
     );
 }

@@ -87,4 +87,12 @@
     margin: 0;
     
   }
+
+  .Title {
+    margin-top: 10px;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
   

@@ -22,6 +22,7 @@ function DisplayUser({isAuth}) {
         (post) => post.author.id === userId
       );
       setPostList(filteredPosts);
+      setUserName(filteredPosts[0]?.author.name || ""); 
     };
     getPosts();
 
