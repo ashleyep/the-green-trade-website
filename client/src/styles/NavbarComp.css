@@ -8,6 +8,29 @@
   opacity: 1;
 }
 
+.dropdown-menu {
+  padding: 0;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  white-space: nowrap; /* keeps content in one line */
+  width: auto;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #000;
+  border-radius: 15px;
+}
+
 
 .smaller-title {
     max-height: 40px;

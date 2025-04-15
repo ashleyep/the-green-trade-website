@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Navbar,
   Nav,
@@ -16,9 +17,11 @@ import { signOut } from "firebase/auth"; // Make sure to import the signOut func
 import { auth } from "../firebase-config";
 
 const NavbarComp = () => {
+  const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(
     localStorage.getItem("isAuth") === "true"
   );
+
 
   const handleLogout = () => {
     signOut(auth)
@@ -32,6 +35,11 @@ const NavbarComp = () => {
       });
   };
 
+  const handleSelect = (category) => {
+    const queryParam = category === "All Posts" ? "" : `?category=${encodeURIComponent(category)}`;
+    navigate(`/posts${queryParam}`);
+  };
+  
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -57,16 +65,11 @@ const NavbarComp = () => {
                 </LinkContainer>
                 <LinkContainer to="/posts">
                   <NavDropdown title="Posts" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/posts">All Posts</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Shirts</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Pants</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Shorts</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Shoes</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Sweaters</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Jackets</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Skirts</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Dresses</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.1">Accessories</NavDropdown.Item>
+                  {["All Posts", "Shirts", "Pants", "Shorts", "Shoes", "Sweaters", "Jackets", "Skirts", "Dresses", "Accessories"].map(cat => (
+        <NavDropdown.Item key={cat} onClick={() => handleSelect(cat)}>
+          {cat}
+        </NavDropdown.Item>
+      ))}
                   </NavDropdown>
                 </LinkContainer>
                 <LinkContainer to="/profile">
