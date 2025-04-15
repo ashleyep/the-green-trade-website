@@ -1,0 +1,90 @@
+.matches-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .matched-user-card {
+    width: 350px;
+    margin: 20px;
+    background-color:  #587D6B;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    background-color: #D8E9D3; /* Soft green background */
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .carousel-button.left {
+    left: 5px;
+
+  }
+  
+  .carousel-button.right {
+    right: 5px;
+  }
+  
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .imageContainer {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .m-post-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .post-description {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .post-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .match-info p {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    font-size: 0.9em;
+  }
+  
+  .match-info h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0;
+    
+  }
+  

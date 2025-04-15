@@ -30,22 +30,19 @@ function Display(props) {
                     <div className="post" key={post.id}>
                         <div className="post-header">
                             <h1 className="title">{post.title}</h1>
-                            {/* <img src={post.author.photoURL} alt="Profile" className="profile-image"/> */}
+                            {props.isAuth && post.author.id === (auth.currentUser?.uid || '') && (
+                                    <button  onClick={() => { deletePost(post.id) }}>
+                                        delete
+                                    </button>
+                                )}
                         </div>
                         <div className=".post-image-container">
                             <img src={post.url} alt="" className="post-image" />
                         </div>
                         <div className="footer">
                             <div className="name">{post.author.name}</div>
-                            <div className='description'>Description: {post.postText}</div>
-                            <div className="contact">Contact Info: {post.contactInfo}</div>
-                            {/* <div className='deletePost'>
-                                {props.isAuth && post.author.id === (auth.currentUser?.uid || '') && (
-                                    <button onClick={() => { deletePost(post.id) }}>
-                                        delete
-                                    </button>
-                                )}
-                        </div> */}
+                            <div className='description'> {post.postText}</div>
+                            {/* <div className="contact">Contact Info: {post.contactInfo}</div> */}
                         </div>
                     </div>
                 );

@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import { auth, provider } from "../firebase-config";
 import { signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
 function Login({ setIsAuth }) {
-  const [user, setUser] = useState({ name: "", email: "" });
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isNewUser, setIsNewUser] = useState(false); // Track whether user is signing up or logging in
-  let navigate = useNavigate();
+  const [isNewUser, setIsNewUser] = useState(false);
+  const navigate = useNavigate();
 
+  
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         setIsAuth(true);
         localStorage.setItem("isAuth", true);
-        setUser({
-          name: result.user.displayName,
-          email: result.user.email,
-        });
         navigate("/profile");
         window.location.reload();
       })
@@ -30,63 +26,50 @@ function Login({ setIsAuth }) {
 
   const handleEmailPasswordAuth = (e) => {
     e.preventDefault();
-    if (isNewUser) {
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-          setIsAuth(true);
-          localStorage.setItem("isAuth", true);
-          setUser({
-            name: result.user.displayName || "User",
-            email: result.user.email,
-          });
-          navigate("/profile");
-          window.location.reload();
-        })
-        .catch((error) => {
-          console.error("Error signing up with email/password:", error);
-        });
-    } else {
-      signInWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-          setIsAuth(true);
-          localStorage.setItem("isAuth", true);
-          setUser({
-            name: result.user.displayName || "User",
-            email: result.user.email,
-          });
-          navigate("/profile");
-          window.location.reload();
-        })
-        .catch((error) => {
-          console.error("Error logging in with email/password:", error);
-        });
-    }
+    const authFn = isNewUser
+      ? createUserWithEmailAndPassword
+      : signInWithEmailAndPassword;
+
+    authFn(auth, email, password)
+      .then((result) => {
+        setIsAuth(true);
+        localStorage.setItem("isAuth", true);
+        navigate("/profile");
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("Authentication error:", error);
+      });
   };
 
-  useEffect(() => {
-    console.log("Display Name:", user.name);
-    console.log("Email:", user.email);
-  }, [user]);
+    useEffect(() => {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    }, []);
+  
 
   return (
-    <div className="body">
-      <div className="loginPage">
-        <div className="text">
-          <h2>LOGIN OR SIGN UP</h2>
-        </div>
-        <div className="button-container2">
-          <div className="login-with-google-btn" onClick={signInWithGoogle}>
-            Login/Sign Up with Google
-          </div>
-        </div>
-        <form onSubmit={handleEmailPasswordAuth} className="email-password-form">
+    <div className="login-wrapper">
+      <div className="login-container">
+        <h2>{isNewUser ? "Create an Account" : "Welcome Back"}</h2>
+
+        <button className="google-btn" onClick={signInWithGoogle}>
+          Continue with Google
+        </button>
+
+        <div className="divider">or</div>
+
+        <form onSubmit={handleEmailPasswordAuth} className="auth-form">
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+
           <input
             type="password"
             placeholder="Password"
@@ -94,15 +77,18 @@ function Login({ setIsAuth }) {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button type="submit">
-            {isNewUser ? "Sign Up" : "Login"}
+
+          <button type="submit" className="submit-btn">
+            {isNewUser ? "Sign Up" : "Log In"}
           </button>
         </form>
-        <div className="toggle-auth-mode">
+
+        <p className="toggle-auth">
+          {isNewUser ? "Already have an account?" : "New here?"}
           <span onClick={() => setIsNewUser(!isNewUser)}>
-            {isNewUser ? "Already have an account? Login" : "New user? Sign up"}
+            {isNewUser ? " Log In" : " Sign Up"}
           </span>
-        </div>
+        </p>
       </div>
     </div>
   );

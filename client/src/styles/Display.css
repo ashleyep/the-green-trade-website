@@ -13,9 +13,10 @@ body {
 }
 
 .profileInfo {
+  margin-top: 20px;
   display: block;
-  
 }
+
 
 .post {
   width: 400px;
@@ -39,9 +40,8 @@ body {
 }
 .post-header {
   display: grid;
-  width: 400px;
-  grid-template-columns: 1fr 4fr;
-  /* background-color:#b8d0c4; */
+  width: 100%; /* Full width of its container */
+  grid-template-columns: 1fr auto; /* 1st column for the title, 2nd for the button */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-bottom: 30px;
@@ -49,10 +49,24 @@ body {
 }
 
 .title {
-  grid-column: 2;
-  margin-left: 80px;
+  grid-column: 1; /* The title takes up the first column */
   font-size: 20px;
+  margin-left: 20px; /* Add some left margin for spacing */
+}
 
+.post-header button {
+  grid-column: 2; /* The button takes up the second column */
+  justify-self: end; /* Align the button to the right */
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 7px;
+  background-color: #E0E0E0; /* Light gray */
+  color: black;
+  font-size: 0.9em;
+  max-height:30px;
+  margin-right: 10px; /* Optional, for spacing from the edge */
 }
 
 
@@ -63,14 +77,30 @@ body {
   grid-column: 1;
 }
 
-/* .post-image-container {
-  background-color: #b8d0c4;
-} */
-
 .footer {
   /* background-color: #e0e9e4;  */
   width: 400px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: block;
+  
+}
+
+
+.name{
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #D8E9D3; /* Soft green background */
+  align-content: center;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: black;
+  margin-left: 60px;
+  margin-right: 60px;
+
+  
 }

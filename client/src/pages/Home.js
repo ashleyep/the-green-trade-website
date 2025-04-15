@@ -6,16 +6,27 @@ import jennifer from "../assets/jennifer.png";
 import jane from "../assets/jane.png";
 import joan from "../assets/joan.png";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TeamMember from "../components/TeamMember"; // Import the TeamMember component
 
 // import post1 from './assets/post1.JPG';
 // import post2 from './assets/post2.jpg';
 
 function Home() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Replace with your actual auth state
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Replace with your actual auth state
+  
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  
   return (
+    
     <div className="body">
       <div className="about-container">
         <h1 class="about">A NO COST, GREEN ALTERNATIVE TO SHOPPING</h1>
@@ -34,7 +45,7 @@ function Home() {
         )}
       </div>
       <div className="header-container">
-        <h1 class="header">About Us</h1>
+        {/* <h1 class="header">About Us</h1> */}
       </div>
       <div className="info-container">
         <div className="info">
@@ -63,7 +74,9 @@ function Home() {
         <TeamMember name="Jennifer" image={jennifer} description="Developer" />
       </div> */}
         {/* <img class ='profile' src = {HandEarth}></img> */}
+        
       </div>
+      
   );
 }
 

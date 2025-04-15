@@ -1,13 +1,15 @@
-  
+
+
   .MatchingPage {
     display: flex; /* Enable flexbox */
     flex-direction: column; /* Optional, controls stacking direction */
     align-items: center; /* Center horizontally */
     justify-content: center; /* Center vertically */
     text-align: center;
-    padding: 20px;
-    height: 100vh; /* Full viewport height for vertical centering */
-    box-sizing: border-box; /* Ensures padding doesn't affect size */
+    padding: 10px;
+    margin-top: -50px;
+    height:100vh; /* Full viewport height for vertical centering */
+    box-sizing: border-box; /* Ensures padding doesn't affect size */  
   }
   
   .mpTitle {
@@ -19,7 +21,7 @@
   .mpsubTitle {
     color: #666;
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   * {
     margin: 0;
@@ -32,10 +34,10 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    width: 400px;
-    height: 550px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: 350px;
+    height: 450px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: white;
     background-color:  #587D6B;
     border-radius: 10px;  
@@ -108,7 +110,7 @@
     display: flex; /* Use flexbox */
     justify-content: center; /* Center the buttons */
     gap: 100px; /* Optional: add space between buttons */
-    margin-top: 30px; /* Optional: add some space above the buttons */
+    margin-top: 10px; /* Optional: add some space above the buttons */
   }
 
   .but {
@@ -168,13 +170,50 @@
     font-size: 2em;
   }
 
-.popupStyle {
-    position: fixed;
+  .popupStyle {
+    position: absolute; /* relative to m-post */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
+    color: black;
     padding: 20px;
-    borderRadius: 8px;
-    boxShadow: 0px 0px 10px rgba(0,0,0,0.2);
-};
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  
+
+.close {
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: right; 
+  background-color: #E0E0E0; /* Light gray */
+  color: black;
+  float: right;
+  font-size: 0.9em;
+}
+
+.view{
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #D8E9D3; /* Soft green background */
+  align-content: center;
+  float: left;
+  font-size: 0.9em;
+  text-decoration: none;
+  color: black
+  
+}

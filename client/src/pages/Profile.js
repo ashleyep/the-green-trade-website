@@ -3,7 +3,7 @@ import { getDocs, deleteDoc, doc } from "firebase/firestore";
 import { collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import { auth } from "../firebase-config";
-import '../styles/Profile.css';
+import '../styles/Display.css';
 
 function Profile(props) {
   const [user, setUser] = useState(null);
@@ -44,54 +44,43 @@ function Profile(props) {
   };
 
   return (
-    <div className="displayPage">
-      {/* display user information */}
       <div>
-        {user ? (
-          <div className = "profileInfo">
+        <div className="profileInfo">
+          {user ? (
             <h2>Welcome, {user.displayName}</h2>
-            <p>Email: {user.email}</p>
-            {/* Display other user information as needed */}
-          </div>
-        ) : (
-          <p>Please sign in to view your profile.</p>
-        )}
+            // <p>Email: {user.email}</p>
+            // Display other user information as needed
+          ) : (
+            <p>Please sign in to view your profile.</p>
+          )}
+        </div>
+        <div className="displayPage">
+          {postList.map((post) => {
+            return (
+              <div className="post" key={post.id}>
+                <div className="post-header">
+                  <h1 className="title">{post.title}</h1>
+                  {props.isAuth && post.author.id === (auth.currentUser?.uid || '') && (
+                    <button onClick={() => { deletePost(post.id); }}>
+                      delete
+                    </button>
+                  )}
+                </div>
+                <div className=".post-image-container">
+                  <img src={post.url} alt="" className="post-image" />
+                </div>
+                <div className="footer">
+                  <div className="name">{post.author.name}</div>
+                  <div className="description">{post.postText}</div>
+                  {/* <div className="contact">Contact Info: {post.contactInfo}</div> */}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-
-      {/* <img
-        src={auth.currentUser?.photoURL}
-        alt="Profile"
-        className="profile-image"
-      /> */}
-      {/* <h1>Hello {user.displayName}</h1> */}
-      {postList.map((post) => {
-        return (
-          <div className="post" key={post.id}>
-            <h1>{post.title}</h1>
-            <div>
-              <img src={post.url} alt="" className="post-image" />
-            </div>
-            <div className="postTextContainer">
-              Description: {post.postText}
-            </div>
-            <h3>Contact Info: {post.contactInfo}</h3>
-            <h3>User: {post.author.name}</h3>
-            <div className="deletePost">
-              {props.isAuth && (
-                <button
-                  onClick={() => {
-                    deletePost(post.id);
-                  }}
-                >
-                  delete
-                </button>
-              )}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+    );
+    
 }
 
 export default Profile;

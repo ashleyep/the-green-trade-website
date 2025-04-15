@@ -72,6 +72,9 @@ const NavbarComp = () => {
                 <LinkContainer to="/profile">
                   <Nav.Link>Profile</Nav.Link>
                 </LinkContainer>
+                <LinkContainer to="/matches">
+                  <Nav.Link>Matches</Nav.Link>
+                </LinkContainer>
                 <Nav.Link onClick={isAuth ? handleLogout : null}>
                   {isAuth ? "Logout" : ""}
                 </Nav.Link>

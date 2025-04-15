@@ -15,23 +15,115 @@
   color: black;
   text-align: center;
 }
-
-
-.button-container2 {
+.login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2%;
-  font-size: 25px;
-}
-.login-with-google-btn {
-  height: 100%;
-  background-color: white;
-  padding:10px;
-  color: #587d6b;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.login-with-google-btn:hover {
-  color: #587d6b;
-  background-color: white;
+.login-container {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
 }
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #1f2937;
+}
+
+.google-btn {
+  background-color: #074e0f;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+.google-btn:hover {
+  background-color: #587D6B;
+}
+
+.divider {
+  margin: 1rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #d1d5db;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form input {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.auth-form input:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+.submit-btn {
+  background-color:#c1e1b7;
+  color: black;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color:  #D8E9D3;
+}
+
+.toggle-auth {
+  margin-top: 1rem;
+  color: black;
+  font-weight: 500;
+}
+
+.toggle-auth span {
+  color:black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.3rem;
+}
+

@@ -46,16 +46,17 @@ function CreatePost({ isAuth }) {
         url,
         style,
         type,
+        size,
         author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
       });
 
-      navigate("/Display"); // posts
+      navigate("/profile");
+
     } catch (error) {
       console.error("Error creating post:", error.message);
     }
   };
-
-
+ 
 
   useEffect(() => {
     if (!isAuth) {
@@ -93,7 +94,7 @@ function CreatePost({ isAuth }) {
 
   return (
     <div className="createPostPage">
-      <h1 id="createPostTitle">Create A Post</h1>
+      <h1 id="createPostTitle">Create  Post</h1>
       <div className="cpContainer">
 
 
@@ -143,20 +144,14 @@ function CreatePost({ isAuth }) {
 
         <div class="inputDetails">
           <TypeSelectBox setType={setType}/>
-        </div>
-
-        <div class="inputDetails">
           <StyleSelectBox setStyle={setStyle} />
-        </div>
-       
-        <div className="inputDetails">
           {renderSizeSelectBox()}
         </div>
-        
 
-        <div class="inputDetails">
+    
+        <div class="submit">
           <button onClick={createPost} disabled={!postNotEmpty()}>
-          Submit Post
+           post it!
           </button>
           
         </div>

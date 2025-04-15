@@ -1,6 +1,4 @@
 
-
-
 .createPostPage {
     margin-top: 2%;
     display: flex;
@@ -8,7 +6,7 @@
 }
 
 .cpContainer {
-    margin-top: 50px;
+    margin-top: 75px;
     margin-bottom: 20px;
     margin-left: 40px;
     margin-right: 40px;
@@ -22,9 +20,27 @@
 }
 
 .inputDetails {
-    display: block;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px; 
     border-radius: 15px;
+}
+
+.custom-select select {
+    border-radius: 5px;
+    padding: 5px;
+}
+.submit {
+    display: flex;
+    justify-content: center;
+}
+.submit button{
+    margin-top: 25px;
+    padding: 7px;
+    border-radius: 5px;
+    color: black;
+    background-color: #d4ead1;
+    
 }
 
 button {
@@ -37,6 +53,7 @@ button {
 }
 
 input[type=text]  {
+    padding: 7px;
     max-width: 900px;
     border-radius: 5px;
     background-color: white;
@@ -44,11 +61,12 @@ input[type=text]  {
 
 }
 
-/* 
 
 #createPostTitle {
-    display: block;
+    margin-bottom: 300px;
 }
+
+/* 
 
 
 .inputDetails {

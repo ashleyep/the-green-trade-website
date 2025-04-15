@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../styles/CreatePost.css";
 
 /* POTENTIALLY DELETING
 export function SizeSelectBox({type, setSize}) {

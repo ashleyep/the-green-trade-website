@@ -30,6 +30,7 @@
     width: fit-content;
     text-decoration: none;
     outline: none;
+    border-radius: 15px;
 }
 
 .header-container {
@@ -77,6 +78,7 @@
     padding-left: 10px;
     padding-right: 10px;
     opacity: 60%;
+    border-radius: 15px;
 }
 .imageBox {
     display: grid;

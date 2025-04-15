@@ -9,6 +9,7 @@ import Title from './assets/title.png';
 import Display from './pages/Display';
 import Contact from './pages/Contact';
 import Profile from "./pages/Profile";
+import Matches from "./pages/Matches";
 import CreatePost from './pages/CreatePost';
 import Matching from './pages/Matching';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/posts" element={<Display isAuth={isAuth} />} />
         <Route path="/profile" element={<Profile isAuth={isAuth} />} />
         <Route path="/matching" element={<Matching isAuth={isAuth} />} />
+        <Route path="/matches" element={<Matches isAuth={isAuth} />} />
       </Routes>
     </div>
   );
