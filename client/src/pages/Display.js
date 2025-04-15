@@ -4,6 +4,7 @@ import { getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { collection } from 'firebase/firestore';
 import { db } from "../firebase-config";
 import { auth } from "../firebase-config";
+import { Link } from 'react-router-dom';
 import "../styles/Display.css";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
@@ -52,7 +53,7 @@ function Display(props) {
                             <img src={post.url} alt="" className="post-image" />
                         </div>
                         <div className="footer">
-                            <div className="name">{post.author.name}</div>
+                            <Link to = {`/profiles/${post.author.id}`} className="name">{post.author.name}</Link>
                             <div className='description'> {post.postText}</div>
                             {/* <div className="contact">Contact Info: {post.contactInfo}</div> */}
                         </div>

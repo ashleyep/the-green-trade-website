@@ -20,6 +20,7 @@ import {Link} from 'react-router-dom';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import { LinkContainer } from "react-router-bootstrap";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import DisplayUser from './components/DisplayUser';
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/profile" element={<Profile isAuth={isAuth} />} />
         <Route path="/matching" element={<Matching isAuth={isAuth} />} />
         <Route path="/matches" element={<Matches isAuth={isAuth} />} />
+        <Route path="/profiles/:userId" element={<DisplayUser isAuth={isAuth} />} />
       </Routes>
     </div>
   );
