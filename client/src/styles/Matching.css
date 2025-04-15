@@ -1,0 +1,219 @@
+
+
+  .MatchingPage {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Optional, controls stacking direction */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;
+    padding: 10px;
+    margin-top: -50px;
+    height:100vh; /* Full viewport height for vertical centering */
+    box-sizing: border-box; /* Ensures padding doesn't affect size */  
+  }
+  
+  .mpTitle {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .mpsubTitle {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Prevents padding from adding extra width */
+  }
+
+  .m-post {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 450px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    background-color:  #587D6B;
+    border-radius: 10px;  
+    padding: 0px;
+    max-width: 400px;
+    position: relative;
+  }
+  
+
+  .imageContainer {
+    margin: 15px 0;
+  }
+  
+  .m-post-image {
+    margin-top: 10px;
+    width:70%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .post-description {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: height 0.2s ease;
+    /* max-height: 50%; Limiting max height */
+    overflow: hidden;
+  }
+  
+  .additional-attributes {
+    background-color: #D8E9D3; /* Soft green background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    font-size: 14px;
+    color: #555; /* Dark grey text color */
+  }
+  
+  .additional-attributes p {
+    margin: 10px 0;
+    line-height: 1.6;
+    text-align: left;
+    
+  }
+
+  .additional-attributes strong {
+  margin-right: 10px; /* Space between the label and value */
+   }
+  
+  .additional-attributes p::before {
+    content: "✨ "; /* Cute star icon before each line */
+    font-size: 18px;
+
+  }
+
+  
+
+  .buttons {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the buttons */
+    gap: 100px; /* Optional: add space between buttons */
+    margin-top: 10px; /* Optional: add some space above the buttons */
+  }
+
+  .but {
+    width: 60px; /* Adjust the size of the button */
+    height: 60px; /* Adjust the size of the button */
+    border-radius: 50%; /* Makes the button circular */
+    background-color: white; /* Background color of the button */
+    color: 2px solid red; /* Optional: Add a border color */
+    display: flex;
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    cursor: pointer; /* Change the cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .but:hover {
+    background-color: lightgray; /* Change background on hover */
+  }
+  
+  .fa-heart {
+    color: rgb(92, 206, 134); /* Make the heart icon  green */
+    font-size: 28px; /* Increase the size of the heart icon */
+  }
+  .fa-heart-dis {
+    color: rgb(144, 137, 137);/* Make the heart icon  green */
+    font-size: 28px; /* Increase the size of the heart icon */
+  }
+  
+  .fa-undo {
+    color: rgb(205, 171, 48); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
+  }
+  .fa-undo-dis {
+    color: rgb(144, 137, 137); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
+  }
+  
+  .fa-x {
+    color: rgb(205, 48, 48); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
+  }
+
+  .fa-x-dis {
+    color: rgb(144, 137, 137); /* Change the color of the undo icon */
+    font-size: 24px; /* Increase the size of the undo icon */
+    transition: transform 0.3s; 
+  }
+
+  .rotate {
+    transform: rotate(180deg); /* Adjust the angle as needed */
+  }
+  .post-title {
+    color: white;
+    font-size: 2em;
+  }
+
+  .popupStyle {
+    position: absolute; /* relative to m-post */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  
+
+.close {
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: right; 
+  background-color: #E0E0E0; /* Light gray */
+  color: black;
+  float: right;
+  font-size: 0.9em;
+}
+
+.view{
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #D8E9D3; /* Soft green background */
+  align-content: center;
+  float: left;
+  font-size: 0.9em;
+  text-decoration: none;
+  color: black
+  
+}
