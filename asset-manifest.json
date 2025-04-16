@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/the-green-trade-website/static/css/main.a0ef065c.css",
-    "main.js": "/the-green-trade-website/static/js/main.5eba8b4f.js",
+    "main.js": "/the-green-trade-website/static/js/main.a297c6af.js",
     "static/js/453.419a5d54.chunk.js": "/the-green-trade-website/static/js/453.419a5d54.chunk.js",
     "static/media/ashley.png": "/the-green-trade-website/static/media/ashley.6c4af00781d3422f0990.png",
     "static/media/jennifer.png": "/the-green-trade-website/static/media/jennifer.aa0f9e787188cefae09b.png",
@@ -21,11 +21,11 @@
     "static/media/fa-v4compatibility.woff2": "/the-green-trade-website/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/the-green-trade-website/index.html",
     "main.a0ef065c.css.map": "/the-green-trade-website/static/css/main.a0ef065c.css.map",
-    "main.5eba8b4f.js.map": "/the-green-trade-website/static/js/main.5eba8b4f.js.map",
+    "main.a297c6af.js.map": "/the-green-trade-website/static/js/main.a297c6af.js.map",
     "453.419a5d54.chunk.js.map": "/the-green-trade-website/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0ef065c.css",
-    "static/js/main.5eba8b4f.js"
+    "static/js/main.a297c6af.js"
   ]
 }
