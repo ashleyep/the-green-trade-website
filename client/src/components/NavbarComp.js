@@ -85,9 +85,10 @@ const NavbarComp = () => {
             )}
               {!isAuth && (
               <>
-                <Nav.Link onClick={!isAuth ? handleLogout : null}>
-                  {!isAuth ? "Login" : ""}
-                </Nav.Link>
+              <LinkContainer to="/login"><Nav.Link>Login</Nav.Link></LinkContainer>
+                {/* <Nav.Link onClick={!isAuth ? handleLogout : null}>
+                 
+                </Nav.Link> */}
               </>
             )}
           </Nav>
