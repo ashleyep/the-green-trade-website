@@ -6,10 +6,11 @@ import { db } from "../firebase-config";
 import { auth } from "../firebase-config";
 import '../styles/Display.css';
 
-function DisplayUser({isAuth}) {
+function UserProfile({isAuth, userId}) {
   const [user, setUser] = useState(null);
-  const { userId } = useParams();
-  console.log(userId, "got the params")
+//   const { userId } = useParams();
+console.log("in user profile");
+  // console.log(userId, "got the params")
   const [postList, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
   const [userName, setUserName] = useState("");
@@ -29,7 +30,7 @@ function DisplayUser({isAuth}) {
     setUserName(postList[0]?.author.name || ""); 
     // firebase authentification observer 
     // onAuthStateChanged function updates the user state
-    // const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         // User is signed in
         setUser(user);
@@ -37,9 +38,10 @@ function DisplayUser({isAuth}) {
         // User is signed out
         setUser(null);
       }
-    // });
+    });
 
     // Clean up the observer when the component unmounts
+    return () => unsubscribe();
   }, []); // Empty dependency array to run the effect only once
 
 
@@ -88,4 +90,4 @@ function DisplayUser({isAuth}) {
     
 }
 
-export default DisplayUser;
+export default UserProfile;
