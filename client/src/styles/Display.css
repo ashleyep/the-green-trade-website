@@ -1,3 +1,4 @@
+
 body {
   background-image: url("../assets/background.png");
   background-size: contain;
@@ -9,12 +10,12 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 50px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 .profileInfo {
   margin-top: 20px;
-  display: block;
+  /* display: block; */
 }
 
 .profileInfo h2 {
@@ -55,76 +56,84 @@ body {
   width:auto;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.post-header {
-  display: grid;
-  width: 100%; /* Full width of its container */
-  grid-template-columns: 1fr auto; /* 1st column for the title, 2nd for the button */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-bottom: 30px;
-  margin-top: 15px;
-}
-
-.post-header h1 {
-  grid-column: 1; /* The title takes up the first column */
-  font-size: 20px;
-  text-align: center !important;
-  margin-left: 10px; /* Add some left margin for spacing */
-  margin-right: -10px; 
- 
-
-}
-
-.post-header button {
-  grid-column: 2; /* The button takes up the second column */
-  justify-self: end; /* Align the button to the right */
-  border-radius: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 7px;
-  background-color: #E0E0E0; /* Light gray */
-  color: black;
-  font-size: 0.9em;
-  max-height:30px;
-  margin-right: 10px; /* Optional, for spacing from the edge */
-}
-
-
-.profile-image {
+/* .profile-image {
   border-radius: 50%;
   width: 60px;
   height: 60px;
   grid-column: 1;
-}
+} */
 
 .footer {
+
   /* background-color: #e0e9e4;  */
   width: 400px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  display: block;
+  margin-top: -50px;
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  /* display: block; */
   
 }
 
 
 .name{
   border-radius: 10px;
-  margin-top: 10px;
+  /* margin-bottom: 50px !important; */
+  padding-left:10px;
+  padding-right:10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-top: -30px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: #D8E9D3; /* Soft green background */
   align-content: center;
   font-size: 1.1em;
   text-decoration: none;
   color: black;
-  margin-left: 60px;
-  margin-right: 60px;
+  /* margin-left: 60px;
+  margin-right: 60px; */
+}
 
-  
+.name:hover {
+  background-color: #C0C0C0; /* Darker gray */
+}
+
+.description {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  z-index: 1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.delete button{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 7px;
+  background-color: #E0E0E0; /* Light gray */
+}
+
+.delete button:hover{
+  background-color: #C0C0C0; /* Darker gray */
 }

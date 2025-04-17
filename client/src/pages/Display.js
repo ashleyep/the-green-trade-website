@@ -49,11 +49,13 @@ function Display(props) {
                     <div className="post" key={post.id}>
                         <div className="post-header">
                             <h1 className="title">{post.title}</h1>
+                            <div className="delete">
                             {props.isAuth && post.author.id === (auth.currentUser?.uid || '') && (
                                     <button  onClick={() => { deletePost(post.id) }}>
                                         Delete
                                     </button>
                                 )}
+                            </div>
                         </div>
                         <div className="post-image-container">
                             <img src={post.url} alt="" className="post-image" />

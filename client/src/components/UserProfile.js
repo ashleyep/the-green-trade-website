@@ -3,6 +3,7 @@ import { getDocs, deleteDoc, doc } from "firebase/firestore";
 import { collection } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { db } from "../firebase-config";
+import { Link } from "react-router-dom";
 import { auth } from "../firebase-config";
 import '../styles/Display.css';
 
@@ -65,22 +66,24 @@ console.log("in user profile");
           {postList.map((post) => {
             return (
               <div className="post" key={post.id}>
-                <div className="post-header">
-                  <h1 className="title">{post.title}</h1>
-                  {isAuth && post.author.id === (auth.currentUser?.uid || '') && (
-                    <button onClick={() => { deletePost(post.id); }}>
-                      delete
-                    </button>
-                  )}
+              <div className="post-header">
+                <h1 className="title">{post.title}</h1>
+                <div className="delete">
+                {isAuth && post.author.id === (auth.currentUser?.uid || '') && (
+                  <button onClick={() => { deletePost(post.id); }}>delete</button>
+                )}
                 </div>
-                <div className=".post-image-container">
-                  <img src={post.url} alt="" className="post-image" />
-                </div>
-                <div className="footer">
-                  <div className="name">{post.author.name}</div>
-                  <div className="description">{post.postText}</div>
-                  {/* <div className="contact">Contact Info: {post.contactInfo}</div> */}
-                </div>
+              </div>
+              <div className="post-image-container">
+                <img src={post.url} alt="" className="post-image" />
+              </div>
+              <div className="footer">
+                {/* <div className="name-description"> */}
+                <Link to = {`/profiles/${post.author.id}`} className="name">{post.author.name}</Link>
+                <div className="description">{post.postText}</div>
+                {/* </div> */}
+                {/* <div className="contact">Contact Info: {post.contactInfo}</div> */}
+              </div>
               </div>
             );
           })}

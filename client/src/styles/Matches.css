@@ -23,15 +23,16 @@
   
   .carousel-button {
     position: absolute;
-    background-color: #D8E9D3; /* Soft green background */
+    background-color: #587D6B; /* Soft green background */
     border: none;
-    font-size: 2em;
+    font-size: 4em;
     cursor: pointer;
     padding: 2px 5px;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    color: white;
   }
   
   .carousel-button.left {
