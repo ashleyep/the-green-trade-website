@@ -55,7 +55,7 @@ function Display(props) {
                                     </button>
                                 )}
                         </div>
-                        <div className=".post-image-container">
+                        <div className="post-image-container">
                             <img src={post.url} alt="" className="post-image" />
                         </div>
                         <div className="footer">

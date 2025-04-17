@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom';
 import { getDocs, deleteDoc, doc, addDoc, collection } from "firebase/firestore";
 import { db, auth, storage } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import "../styles/Matches.css";
-import {Link} from 'react-router-dom';
+
 function Matches({ isAuth }) {
  let navigate = useNavigate();
 
