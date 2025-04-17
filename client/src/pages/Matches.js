@@ -4,7 +4,7 @@ import { db, auth, storage } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import "../styles/Matches.css";
-
+import {Link} from 'react-router-dom';
 function Matches({ isAuth }) {
  let navigate = useNavigate();
 
@@ -103,6 +103,7 @@ function Matches({ isAuth }) {
 
           const name = posts[0].author.name; // Assuming consistent author info per user
           const contact = posts[0].contactInfo; // Assuming consistent author info per user
+          const authID = posts[0].author.id; // Assuming consistent author info per user
 
           const currentIndex = currentPostIndex[userId] || 0;
           const currentPost = posts[currentIndex];
@@ -136,7 +137,7 @@ function Matches({ isAuth }) {
                 </button>
               </div>
               <div className="match-info">
-                <h2>{name}</h2>
+                <Link to = {`/profiles/${authID}`} className="name">{name}</Link>
                 <p>{contact}</p>
               </div>
             </div>

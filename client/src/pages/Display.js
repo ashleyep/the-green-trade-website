@@ -5,7 +5,9 @@ import { collection } from 'firebase/firestore';
 import { db } from "../firebase-config";
 import { auth } from "../firebase-config";
 import { Link } from 'react-router-dom';
+import UserProfile from "../components/UserProfile";
 import "../styles/Display.css";
+
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
