@@ -1,6 +1,32 @@
 import React, { useState, useEffect } from "react";
 import "../styles/CreatePost.css";
 
+const sizes = ["XS", "S", "M", "L", "XL", "2XL"];
+
+const types = [
+    "Shirts",
+    "Pants",
+    "Shorts",
+    "Shoes",
+    "Sweaters",
+    "Jackets",
+    "Skirts",
+    "Dresses",
+    "Accessories"
+];  
+
+const styles = [
+    "Goth",
+    "Preppy",
+    "Vintage",
+    "Y2K",
+    "Streetwear",
+    "Formal",
+    "Athletic Wear",
+    "Basics",
+    "Professional"
+]
+
 /* POTENTIALLY DELETING
 export function SizeSelectBox({type, setSize}) {
     const getSizeOptions = () => {
@@ -24,12 +50,11 @@ export function BaseSizeSelectBox({ setSize }) {
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
                 <option value="Null">Please Select Size</option>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="2XL">2XL</option>
+                {sizes.map((size) => (
+                    <option key={size} value={size}>
+                        {size}
+                    </option>
+                ))}
             </select>
         </div>
     );
@@ -61,12 +86,11 @@ export function PantsSizeSelectBox({ setSize }) {
             <label className="inputDetails">Select Size:</label>
             <select onChange={(e) => setSize(e.target.value)}>
                 <option value="Null">Please Select Size</option>
-                <option value="XS">XS</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="2XL">2XL</option>
+                {sizes.map((size) => (
+                    <option key={size} value={size}>
+                        {size}
+                    </option>
+                ))}
                 {Array.from({ length: 13 }, (_, i) => {
                     const size = i * 2;
                     return (
@@ -85,8 +109,8 @@ export function PantsSizeSelectBox({ setSize }) {
 
 export function TypeSelectBox({ setType, setSize, type }) {
     //const TypeSelect = document.createElement("select")
-    const [sizeSelect, setSizeSelect] = useState()
-    const [selectedType, setSelectedType] = useState()
+    // const [sizeSelect, setSizeSelect] = useState()
+    // const [selectedType, setSelectedType] = useState()
 
 
     const handleSelect = (e) => {
@@ -98,15 +122,11 @@ export function TypeSelectBox({ setType, setSize, type }) {
             <label className="inputDetails">Clothing type:</label>
             <select onChange={handleSelect}>
                 <option value="Null">Please Select Type</option>
-                <option value="Shirts">Shirts</option>
-                <option value="Pants">Pants</option>
-                <option value="Shorts">Shorts</option>
-                <option value="Shoes">Shoes</option>
-                <option value="Sweaters">Sweaters</option>
-                <option value="Jackets">Jackets</option>
-                <option value="Skirts">Skirts</option>
-                <option value="Dresses">Dresses</option>
-                <option value="Accessories">Accessories</option>
+                {types.map((type) => (
+                    <option key={type} value={type}>
+                        {type}
+                    </option>
+                ))}
             </select>
         </div>        
     );
@@ -119,15 +139,11 @@ export function StyleSelectBox({ setStyle }) {
             <label className="inputDetails">Aesthetic/Style:</label>
             <select onChange={(e) => setStyle(e.target.value)}>
                 <option value="Null">Please Select Style</option>
-                <option value="Goth">Goth</option>
-                <option value="Preppy">Preppy</option>
-                <option value="Vintage">Vintage</option>
-                <option value="Y2K">Y2K</option>
-                <option value="Streetwear">Streetwear</option>
-                <option value="Formal">Formal</option>
-                <option value="Athletic Wear">Athletic Wear</option>
-                <option value="Basics">Basics</option>
-                <option value="Professional">Professional</option>
+                {styles.map((style) => (
+                    <option key={style} value={style}>
+                        {style}
+                    </option>
+                ))}
             </select>
         </div>
     );
